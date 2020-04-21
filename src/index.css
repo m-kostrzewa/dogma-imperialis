@@ -1,0 +1,65 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(40,40,40);
+    font-family: 'Raleway', sans-serif;
+    color: antiquewhite;
+}
+
+nav {
+    background-color: rgba(60,60,60);
+    overflow: hidden;
+}
+nav a {
+    display: block;
+    float: right;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: antiquewhite;
+    transition: background-color 0.2s ease;
+}
+nav a:hover {
+    background-color: rgb(146, 72, 72);
+    transition: background-color 0.2s ease;
+}
+nav a.active {
+    background-color: rgb(179, 32, 32);
+    transition: background-color 0.2s ease;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#content-wrap {
+    padding: 0 0 30px 0;
+}
+
+footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+@keyframes servoskull-float-anim {
+    0%   {bottom:30px;}
+    50%  {bottom:50px;}
+    100% {bottom:30px;}
+}
+#skull {
+    float: right;
+    max-width: 200px;
+    height: auto;
+    position: fixed;
+    right: 20px;
+
+    animation-name: servoskull-float-anim;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
