@@ -35,3 +35,17 @@
     margin: 2px 20px;
     text-align: right;
 }
+
+
+.quotation a {
+    color: antiquewhite;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.quotation a:hover {
+    color: rgb(179, 32, 32);
+    transition: all 0.2s ease;
+}
+.quotation a.active {
+    text-decoration: none;
+}

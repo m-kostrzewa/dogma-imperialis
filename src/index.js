@@ -20,7 +20,11 @@ ReactDOM.render(
 
         <article id="content-wrap">
           <CogitatorComponent />
-          <QuotationsComponent />
+
+          <FirebaseContext.Consumer>
+              {firebase => <QuotationsComponent firebase={firebase} />}
+          </FirebaseContext.Consumer>
+
         </article>
         <footer>
           Footer text

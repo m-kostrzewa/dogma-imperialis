@@ -1,9 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch, Hits } from 'react-instantsearch-dom';
+
+import DebouncedSearchBox from './debouncedSearch';
+
 import './cogitator.css';
 
+const searchClient = algoliasearch(
+    'YYX0J9QPH2',
+    '7d0acf207476e6e99fb6caea9b526637'
+);
 
 class CogitatorComponent extends React.Component {
+
     render() {
         return (
         <div class="cogitator-body">
@@ -11,6 +23,13 @@ class CogitatorComponent extends React.Component {
             <div class="cogitator">
                 <p>Cogitator</p>
 
+                <InstantSearch
+                    indexName="prod_QUOTES"
+                    searchClient={searchClient}
+                >
+                    <DebouncedSearchBox />
+                    <Hits />
+                </InstantSearch>
                 <form>
                     <div class="submenu-div">
                         <label class="submenu-expand-label" for="realspace-submenu-expand">filter_realspace_sources_ ></label>

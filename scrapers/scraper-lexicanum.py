@@ -36,8 +36,6 @@ quote_urls = [
     "https://wh40k.lexicanum.com/wiki/Cult_Mechanicus_Religious_Excerpts",
     "https://wh40k.lexicanum.com/wiki/Necron_Quotes",
     "https://wh40k.lexicanum.com/wiki/Tactica_Imperium_passages"
-
-
 ]
 
 
