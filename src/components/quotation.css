@@ -1,13 +1,20 @@
+
+.quotation-wrapper {
+    transition: height 0.5s;
+    overflow: hidden;
+    padding: 20px;
+
+    margin: auto;
+    width: 800px;
+    text-align: center;
+}
+
+
 @keyframes fade-in-anim {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
 }
 .quotation {
-    /* display: block; */
-    margin: auto;
-    width: 800px;
-    text-align: center;
-
 	animation-name: fade-in-anim;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
@@ -21,51 +28,14 @@
 .quotation:hover {
     color: rgb(179, 32, 32);
     transition: color 0.5s ease;
-    /* display: inline-block; */
-
 }
 
-.quotation .three-dots {
-    font-size: 100%;
-    display: inline-block;
-    vertical-align: middle;
-
-}
-
-.visible-text {
-    vertical-align: middle;
-    display : inline-block;
-
-}
-
-.quotation:hover .three-dots {
-    font-size: 0;
-}
-
-.quotation .hidden-text {
-    max-height: 0;
-    font-size: 0;
-    transition: max-height 0.1s; /* can't get transition to work on return.... */
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: middle; /* https://stackoverflow.com/questions/27679919/inline-block-displayed-div-are-not-on-the-same-level */
-
-}
-
-.quotation:hover .hidden-text {
-    font-size: 100%;
-    max-height: 100vw;
-    transition: max-height 1.5s;
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: middle; /* https://stackoverflow.com/questions/27679919/inline-block-displayed-div-are-not-on-the-same-level */
-}
 
 .quotation q {
     display: block;
     font-family: 'Cinzel';
     font-size: 30px;
-    margin: 30px 20px 0px 20px;
+    padding: 10px;
 }
 
 .quotation cite {
@@ -75,25 +45,6 @@
     margin: 2px 20px;
     text-align: right;
 }
-
-
-
-/* .visible-text + {
-    visibility: hidden;
-    font-size: 0;
-}
-
-.visible-text:hover + {
-    visibility: visible;
-}
-
-.hidden-text {
-    content: " (...) ";
-    /* max-width: 0px;
-    max-height: 0px;
-    font-size: 0;
-}
-*/
 
 
 .quotation a {

@@ -8,7 +8,7 @@ class QuotationComponent extends React.Component {
   constructor(props) {
     super(props);
 
-    let fullText = props.hit.text;
+    const fullText = props.hit.text;
 
     charIdx = fullText.length;
     if (charIdx > 200) {
@@ -18,24 +18,24 @@ class QuotationComponent extends React.Component {
       }
     }
     const alwaysShowText = fullText.slice(0, charIdx);
-    const detailShowText = fullText.slice(charIdx);
+    const expandShowText = fullText.slice(charIdx);
 
-    var threeDots = " (...) ";
-    if(detailShowText.length === 0) {
-        threeDots = "";
-    }
+    this.onMouseEnter = this.onMouseEnter.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.defaultTextToShow = this.defaultTextToShow.bind(this);
+    this.expandedTextToShow = this.expandedTextToShow.bind(this);
 
-    console.log(fullText);
-    console.log(alwaysShowText);
-    console.log("detail", detailShowText);
+    this.wrapperRef = React.createRef();
+    this.sectionRef = React.createRef();
+
 
     this.state = {
       quotation: props.hit,
-      showDetails: false,
       alwaysShowText,
-      detailShowText,
-      threeDots,
+      expandShowText,
     };
+
+    this.state.actualText = this.defaultTextToShow();
 
     // this.props.firebase.db.collection('quotes').orderBy('text').limit(10).get()
     //   .then((querySnapshot) => {
@@ -98,39 +98,43 @@ class QuotationComponent extends React.Component {
     //     },
     //   ],
     // };
+  }
 
-    this.onMouseEnter = this.onMouseEnter.bind(this);
-    this.onMouseLeave = this.onMouseLeave.bind(this);
+  defaultTextToShow() {
+    let textToShow = this.state.alwaysShowText;
+    if (this.state.expandShowText.length !== 0) {
+      textToShow += ' (...)';
+    }
+    return textToShow;
+  }
+
+  expandedTextToShow() {
+    return this.state.alwaysShowText + this.state.expandShowText;
   }
 
   onMouseEnter(event) {
     this.setState({
-      showDetails: true,
+      actualText: this.expandedTextToShow(),
     });
   }
 
   onMouseLeave(event) {
     this.setState({
-      showDetails: false,
+      actualText: this.defaultTextToShow(),
     });
   }
 
+  componentDidUpdate() {
+    this.wrapperRef.current.style.height = `${this.sectionRef.current.clientHeight}px`;
+  }
 
   render() {
-    // const quotationsList = this.state.quotations.map((q, idx) => {
-    //   const style = {
-    //     animationDelay: `${idx / 10}s`,
-    //   };
-    // style={style}>
     const q = this.state.quotation;
-
     return (
-      <div className="quotation-wrapper" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-        <section className="quotation">
+      <div className="quotation-wrapper" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} ref={this.wrapperRef}>
+        <section ref={this.sectionRef} className="quotation">
           <q>
-            <span className="visible-text">{this.state.alwaysShowText}</span>
-            <span className="three-dots">{this.state.threeDots}</span>
-            <span className="hidden-text">{this.state.detailShowText}</span>
+            {this.state.actualText}
           </q>
           <cite><div dangerouslySetInnerHTML={{ __html: q.lore_source }} /></cite>
           <cite><div dangerouslySetInnerHTML={{ __html: q.real_source }} /></cite>
@@ -138,8 +142,6 @@ class QuotationComponent extends React.Component {
       </div>
     );
   }
-  // return quotationsList;
-//   }
 }
 
 export default QuotationComponent;
