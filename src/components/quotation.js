@@ -1,26 +1,53 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './quotations.css';
+import './quotation.css';
+import { Hits } from 'react-instantsearch-dom';
 
 
-class QuotationsComponent extends React.Component {
+class QuotationComponent extends React.Component {
   constructor(props) {
     super(props);
 
+    let fullText = props.hit.text;
+
+    charIdx = fullText.length;
+    if (charIdx > 200) {
+      var charIdx = 200;
+      while (fullText[charIdx] != ' ') {
+        charIdx += 1;
+      }
+    }
+    const alwaysShowText = fullText.slice(0, charIdx);
+    const detailShowText = fullText.slice(charIdx);
+
+    var threeDots = " (...) ";
+    if(detailShowText.length === 0) {
+        threeDots = "";
+    }
+
+    console.log(fullText);
+    console.log(alwaysShowText);
+    console.log("detail", detailShowText);
+
     this.state = {
-      quotations: [],
+      quotation: props.hit,
+      showDetails: false,
+      alwaysShowText,
+      detailShowText,
+      threeDots,
     };
-    this.props.firebase.db.collection('quotes').orderBy('text').limit(10).get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          this.setState((prevState) => ({
-            quotations: [...prevState.quotations, doc.data()],
-          }));
-        });
-      })
-      .catch((error) => {
-        console.log('Error getting documents: ', error);
-      });
+
+    // this.props.firebase.db.collection('quotes').orderBy('text').limit(10).get()
+    //   .then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //       this.setState((prevState) => ({
+    //         quotations: [...prevState.quotations, doc.data()],
+    //       }));
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     console.log('Error getting documents: ', error);
+    //   });
     // this.state = {
     //   quotations: [
     //     {
@@ -71,25 +98,48 @@ class QuotationsComponent extends React.Component {
     //     },
     //   ],
     // };
+
+    this.onMouseEnter = this.onMouseEnter.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
   }
+
+  onMouseEnter(event) {
+    this.setState({
+      showDetails: true,
+    });
+  }
+
+  onMouseLeave(event) {
+    this.setState({
+      showDetails: false,
+    });
+  }
+
 
   render() {
-    const quotationsList = this.state.quotations.map((q, idx) => {
-      const style = {
-        animationDelay: `${idx / 10}s`,
-      };
-      return (
-        <div>
-          <section className="quotation" style={style}>
-            <q>{q.text}</q>
-            <cite><div dangerouslySetInnerHTML={{ __html: q.lore_source }} /></cite>
-            <cite><div dangerouslySetInnerHTML={{ __html: q.real_source }} /></cite>
-          </section>
-        </div>
-      );
-    });
-    return quotationsList;
+    // const quotationsList = this.state.quotations.map((q, idx) => {
+    //   const style = {
+    //     animationDelay: `${idx / 10}s`,
+    //   };
+    // style={style}>
+    const q = this.state.quotation;
+
+    return (
+      <div className="quotation-wrapper" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+        <section className="quotation">
+          <q>
+            <span className="visible-text">{this.state.alwaysShowText}</span>
+            <span className="three-dots">{this.state.threeDots}</span>
+            <span className="hidden-text">{this.state.detailShowText}</span>
+          </q>
+          <cite><div dangerouslySetInnerHTML={{ __html: q.lore_source }} /></cite>
+          <cite><div dangerouslySetInnerHTML={{ __html: q.real_source }} /></cite>
+        </section>
+      </div>
+    );
   }
+  // return quotationsList;
+//   }
 }
 
-export default QuotationsComponent;
+export default QuotationComponent;

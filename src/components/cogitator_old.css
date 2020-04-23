@@ -1,4 +1,4 @@
-/* .cogitator-body * {
+.cogitator-body * {
     font-family: 'Inconsolata';
     font-size: 15px;
     margin: auto;
@@ -111,27 +111,22 @@
 
 .cogitator input[type=checkbox] {
     margin-right: 5px;
-} */
+}
 
 
 .cogitator input[type=search] {
-    display:block;
     background-color: rgba(60, 60, 60);
     border: none;
     padding: 10px;
-    width: 800px;
-    margin: auto;
-    margin-top: 20px;
+    width: 100%;
+    float: left;
 }
 
-/* .cogitator span {
+.cogitator span {
     display: block;
     overflow: hidden;
-    width: 50%;
-    margin: auto;
+}
 
-} */
-/*
 .cogitator input[type=submit], input[type=button] {
     display: block;
     background-color: rgb(117, 17, 17);
@@ -140,5 +135,5 @@
     text-decoration: none;
     cursor: pointer;
     float: right;
-} */
+}
 

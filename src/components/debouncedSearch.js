@@ -16,5 +16,9 @@ export default connectSearchBox(({ refine }) => {
     debouncedSearch(e, e.eventTarget);
   };
 
-  return <input placeholder="Search here..." type="search" onChange={onChange} />;
+  return (
+    <div class="submenu-div">
+        <span><input placeholder="query_string_" type="search" onChange={onChange} /></span>
+    </div>
+  );
 });

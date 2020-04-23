@@ -47,6 +47,14 @@ footer {
     transform: translate(-50%, 0);
 }
 
+.no-results {
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
 @keyframes servoskull-float-anim {
     0%   {bottom:30px;}
     50%  {bottom:50px;}
@@ -62,4 +70,27 @@ footer {
     animation-name: servoskull-float-anim;
     animation-duration: 7s;
     animation-iteration-count: infinite;
+}
+
+.ais-InfiniteHits ul {
+    list-style-type: none;
+    padding: 0;
+    margin: auto;
+    width: 800px;
+
+}
+
+.ais-InfiniteHits li {
+
+}
+
+.ais-InfiniteHits-loadMore  {
+    display: block;
+    background-color: rgb(117, 17, 17);
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: auto;
+    color: antiquewhite;
 }
