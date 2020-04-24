@@ -13,7 +13,7 @@ class QuotationComponent extends React.Component {
     charIdx = fullText.length;
     if (charIdx > 200) {
       var charIdx = 200;
-      while (fullText[charIdx] != ' ') {
+      while (fullText[charIdx] != ' ' && charIdx <= fullText.length) {
         charIdx += 1;
       }
     }
