@@ -1,3 +1,8 @@
+:root {
+    --text-color: antiquewhite;
+    --text-color-hover: rgb(179, 32, 32);
+}
+
 body {
     padding: 0;
     margin: 0;

@@ -6,7 +6,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The weak in mind will seek to understand the xenos. The strong in mind will destroy them, and bless their ignorance.",
         "lore_source": "Quoted by Lector Videx: Binary Hierarch Gethsemorr"
     },
@@ -17,7 +17,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Be thou wary of the works of the alien, for their presence is poison and their every word deceit.",
         "lore_source": "Quoted by Lector Videx: Gathalamoreans, 94.3"
     },
@@ -28,7 +28,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Hark not the alien’s words, lest ye unknowingly repeat them.",
         "lore_source": "Quoted by Lector Videx: Archmagos Veneratus Haelon"
     },
@@ -39,7 +39,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "He who prosecutes the alien with zeal, is the ally of Mankind.",
         "lore_source": "Quoted by Lector Videx: Gathalamorians 60.41"
     },
@@ -50,7 +50,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Of all creations most foul I beheld the Lord of All and knew that I was dead.",
         "lore_source": "Quoted by Lector Videx: Recollections of Inquisitor Brand, Chapter 87"
     },
@@ -61,7 +61,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "In each society there is a classification that is mirrored in another society.",
         "lore_source": "Quoted by Lector Videx: Scripture-Brother Magos Tech-Auxilium Prime, Know Thy Enemy, to Know Thyself"
     },
@@ -72,7 +72,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The only logical response to the presence of the xenos, is hatred.",
         "lore_source": "Quoted by Lector Videx: Verses Macrologica 17.4"
     },
@@ -83,7 +83,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The xenos must be purged, for the stars are humanity’s birthright.",
         "lore_source": "Quoted by Lector Videx: Psalms Hermeticus 46"
     },
@@ -94,7 +94,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Seek not the words of the xenos, lest they infect us with blasphemy.",
         "lore_source": "Quoted by Lector Videx: Admonitions Mechanae 3:16"
     },
@@ -105,7 +105,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "There are horrors in this galaxy that only faith and steel can overcome, and that we should be grateful we shall never fully understand.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 7.1"
     },
@@ -116,7 +116,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Our only objective should be death to the alien and all his works. All else is deviance from the Omnissiah Creed.",
         "lore_source": "Quoted by Lector Videx: Life of Archmagos Borasis, Appendix 9"
     },
@@ -127,7 +127,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Look not upon the alien, for the alien looks back.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 56"
     },
@@ -138,7 +138,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Watch your brother, for his sin of heresy is thy sin of tolerance.",
         "lore_source": "Quoted by Lector Videx: Macharians 16.4"
     },
@@ -149,7 +149,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "We are derelict in our duty whenever we allow corruption to plague the minds of good men.",
         "lore_source": "Quoted by Lector Videx: Tech-Cosmos Verse 68"
     },
@@ -160,7 +160,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "From such small heresies are great apostasies made.",
         "lore_source": "Quoted by Lector Videx: Maxims Metalica, 76.12"
     },
@@ -171,7 +171,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "From the mouths of heretics emit naught but foul vapours. Cut out the tongue and be clean.",
         "lore_source": "Quoted by Lector Videx: Quaestos Mechanicor 5.21"
     },
@@ -182,7 +182,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Better safe and ignorant, than rueing the means of our downfall.",
         "lore_source": "Quoted by Lector Videx: Macharian Notions, Chapter 4113"
     },
@@ -193,7 +193,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Sometimes the weak limb must be amputated before the whole body withers.",
         "lore_source": "Quoted by Lector Videx: Selucian Aphorisms, Verse 539"
     },
@@ -204,7 +204,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "When the heretic is silenced, it is as if his weapons and tools are stripped of him, he is left impotent and weak.",
         "lore_source": "Quoted by Lector Videx: Jovian Ministrations 61.90"
     },
@@ -215,7 +215,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Not all data should be acquired.",
         "lore_source": "Quoted by Lector Videx: Ferro-Dictates 53.12"
     },
@@ -226,7 +226,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Even in death, our duty is not complete.",
         "lore_source": "Quoted by Lector Videx: The Lives of the Logic-Saints, Psalm 61"
     },
@@ -237,7 +237,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "One can verge from the standard form, but one must always retain their humanity, or be lost to the Men of Iron and their ways.",
         "lore_source": "Quoted by Lector Videx: Text of the Oiled Cog, v.12"
     },
@@ -248,7 +248,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Bleak be the prospects, when the black wind of heresy blows.",
         "lore_source": "Quoted by Lector Videx: Levistians 7.14"
     },
@@ -259,7 +259,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "When the enemy seeks to break our spirit, meet his blasphemy with flame!",
         "lore_source": "Quoted by Lector Videx: Aphorisms 82"
     },
@@ -270,7 +270,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "How dim the sacred light burns when the unholy darkness loometh all about.",
         "lore_source": "Quoted by Lector Videx: Meditations Logicae Verse 619"
     },
@@ -281,7 +281,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Ware the script of the enemy, for writ into its lies are the seeds of corruption.",
         "lore_source": "Quoted by Lector Videx: Kryptmann, Verses 11-13"
     },
@@ -292,7 +292,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Seek profane knowledge, and find profane fates.",
         "lore_source": "Quoted by Lector Videx: Macharian Commentaries 73.5"
     },
@@ -303,7 +303,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "He who sows doubt is as blameful as he who sheds blood.",
         "lore_source": "Quoted by Lector Videx: Hagiography of Thor, 14.91"
     },
@@ -314,7 +314,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Wary of those that wonder.",
         "lore_source": "Quoted by Lector Videx: Scripture of the Taloned Cog, v.09 p.3"
     },
@@ -325,7 +325,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Obliterate his words, cut out his tongue, put to fire all wrought by his hand, and the heretic shall cease to exist.",
         "lore_source": "Quoted by Lector Videx: Gathalamorians 714.5"
     },
@@ -336,7 +336,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "First comes knowledge of destruction, then its execution.",
         "lore_source": "Quoted by Lector Videx: Malchadorian Insights 17.4"
     },
@@ -347,7 +347,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Death itself is scarcely an excuse for the sin of duty undone.",
         "lore_source": "Quoted by Lector Videx: Contemplations Hagigraphica"
     },
@@ -358,7 +358,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The foe of reason builds monuments to his madness, and reveals himself thereby.",
         "lore_source": "Quoted by Lector Videx: Malcador the Sigilite"
     },
@@ -369,7 +369,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Knowledge will ever be a blessing and a curse.",
         "lore_source": "Quoted by Lector Videx: Levistians, 9.22"
     },
@@ -380,7 +380,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Show caution and scorn in all things.",
         "lore_source": "Quoted by Lector Videx: Codex Fulminatus 83.12"
     },
@@ -391,7 +391,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Better in ignorance than in heresy.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 25"
     },
@@ -402,7 +402,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Wheresoever the blasphemer writes, obliterate.",
         "lore_source": "Quoted by Lector Videx: Epigraphs Macrologica, Psalm 105"
     },
@@ -413,7 +413,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "When the spirit is neglected, the body falters and the mind is corrupted.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 712"
     },
@@ -424,7 +424,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The willful child is as the maddened steed: when it is let off its leash, it is lost.",
         "lore_source": "Quoted by Lector Videx: Macharian Axloms, Line 918"
     },
@@ -435,7 +435,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Blessed is the ignorance that wise men choose for themselves.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 793"
     },
@@ -446,7 +446,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "When the corruption of the unholy becomes manifest to our senses, a far greater corruption lies unseen.",
         "lore_source": "Quoted by Lector Videx: Superlogicae, verse 971"
     },
@@ -457,7 +457,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Let the weaker in mind follow the words of the strong.",
         "lore_source": "Quoted by Lector Videx: Canticles of Gethsemenoth Line 87"
     },
@@ -468,7 +468,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Thus are the wages of those who delve too deep.",
         "lore_source": "Quoted by Lector Videx: Castigations 17.4"
     },
@@ -479,7 +479,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "We fight the foe’s battle for him, when we take his words into our hearts.",
         "lore_source": "Quoted by Lector Videx: Amalathian Commentaries, Chapter 94"
     },
@@ -490,7 +490,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Do not ask the Omnissiah for a pleasant existence, ask Him for the strength to overcome our tribulations.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 62"
     },
@@ -501,7 +501,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Let the stench of corruption be swept aside by the sweet winds of faith.",
         "lore_source": "Quoted by Lector Videx: Archmagos Veneratus Hieraticus"
     },
@@ -512,7 +512,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The Lord of Mars is with us in the dark, even if thou knowest it not.",
         "lore_source": "Quoted by Lector Videx: Exaltations 49"
     },
@@ -523,7 +523,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Above bullets, above blades, care for your soul above all.",
         "lore_source": "Quoted by Lector Videx: Gathalamorians 45.7"
     },
@@ -534,7 +534,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Protect the shield of the mind, and the body will be shielded thereby.",
         "lore_source": "Quoted by Lector Videx: Epigrams of Saint Eukelsis 3.89"
     },
@@ -545,7 +545,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The eyes of the Omnissiah are ever upon us.",
         "lore_source": "Quoted by Lector Videx: Fabricator General Plutonis"
     },
@@ -556,7 +556,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Sometimes our prayers are answered, but not in the way we would prefer.",
         "lore_source": "Quoted by Lector Videx: Fabricator General Kane"
     },
@@ -567,7 +567,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Thus does the Enemy seek to crush our spirit, for our souls are our most potent weapon.",
         "lore_source": "Quoted by Lector Videx: Amalanthians 9.41"
     },
@@ -578,7 +578,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The sweet incense of faith conquers the toxic stench of corruption.",
         "lore_source": "Quoted by Lector Videx: Kalemnan Orations 5.25"
     },
@@ -589,7 +589,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "And lo, shall Your holy steel be as armour around our souls, and shall Your wisdom guide our hands. No spear nor barb of the enemy shall trouble our flesh of iron. Let the Will of Mars be done!",
         "lore_source": "Quoted by Lector Videx: Collected Logic-Psalms 31.3"
     },
@@ -600,7 +600,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Men fueled by the righteousness of their purpose can achieve what armies cannot.",
         "lore_source": "Quoted by Lector Videx: Eukelsians 60.24"
     },
@@ -611,7 +611,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Even in the deepest darkness, give devotion to the Omnissiah, for there He is needed most.",
         "lore_source": "Quoted by Lector Videx: Gathalamorians 71.30"
     },
@@ -622,7 +622,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Rejoice. Give thanks. For we are but one step now from triumph.",
         "lore_source": "Quoted by Lector Videx: Canticles of Mars, 79.12"
     },
@@ -633,7 +633,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "To every problem, a solution lies in the application of tech-lore.",
         "lore_source": "Quoted by Lector Videx: Ferrarch Asklepian"
     },
@@ -644,7 +644,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Fragile indeed are the tools of the righteous.",
         "lore_source": "Quoted by Lector Videx: Avelornians 5.91"
     },
@@ -655,7 +655,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Beware the deviance of thine own tools, for the Enemy finds his entrance thereby.",
         "lore_source": "Quoted by Lector Videx: Maxims of Amalanth, 5.12"
     },
@@ -666,7 +666,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Without a Standard Model, there is naught but madness and Chaos among the stars.",
         "lore_source": "Quoted by Lector Videx: Aetheric Manuscripts Appendix 71"
     },
@@ -677,7 +677,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Improvisation is rarely welcomed, and then only if the Omnissiah’s will demand it.",
         "lore_source": "Quoted by Lector Videx: Linguis Fulminatus, Chapter 7"
     },
@@ -688,7 +688,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Obey the Standard Model, or obey the laws of death.",
         "lore_source": "Quoted by Lector Videx: Fabricator General Sin-Cosinius"
     },
@@ -699,7 +699,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "A tech-priest does not have hunches. He immerses himself in vast knowledge that is the Omnissiah’s gift, and takes whatever course of action is revealed thereby. No matter how onerous it may be.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 90"
     },
@@ -710,7 +710,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The only will of the Machine Spirit is that of the Omnissian technologies, for the xenos will deceive you and tempt you, but you will not falter, for you are a priest.",
         "lore_source": "Quoted by Lector Videx: Cannot unless you Canticle, v.34"
     },
@@ -721,7 +721,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Through the application of knowledge can great destruction arise.",
         "lore_source": "Quoted by Lector Videx: Fabricator General Isotor"
     },
@@ -732,7 +732,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Let knowledge serve only man, and let that which does not remain in darkness.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 61.2"
     },
@@ -743,7 +743,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The Enemy rushes to action, when our ministrations cause him fear.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 94.13"
     },
@@ -754,7 +754,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "As we purify the ground beneath their feet, they shall find no shelter!",
         "lore_source": "Quoted by Lector Videx: Macharian Commentaries Chapter 71"
     },
@@ -765,7 +765,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Bring guns as well as prayers.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 31"
     },
@@ -776,7 +776,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The loose tongues of our soldiers are as guns in the hands of our enemies.",
         "lore_source": "Quoted by Lector Videx: Saturnine Verses 81.4"
     },
@@ -787,7 +787,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "When the enemy offers open battle, take it, and make it his final mistake.",
         "lore_source": "Quoted by Lector Videx: The Life of Uriah Jacobus, 8.31"
     },
@@ -798,7 +798,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "When the enemy begs for destruction, do not let him go hungry.",
         "lore_source": "Quoted by Lector Videx: Helfirian Recollections, Chapter 571"
     },
@@ -809,7 +809,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Blessed is the life that, in its ending, forgives a lifetime of sin.",
         "lore_source": "Quoted by Lector Videx: Memoirs of Saint Hestios, 5.25"
     },
@@ -820,7 +820,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Purification is the Prelude to Annihilation.",
         "lore_source": "Quoted by Lector Videx: Hagiographics of Saint Regulavis, 91.12"
     },
@@ -831,7 +831,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "If it has not a head to sever, cut out the heart.",
         "lore_source": "Quoted by Lector Videx: Lives of Gyarados 73.60"
     },
@@ -842,7 +842,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Purify it with flames, for this is the wish of the Omnissiah!",
         "lore_source": "Quoted by Lector Videx: Aphorisms 43"
     },
@@ -853,7 +853,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "When the final analysis is fully calculated, all equations balance against righteous annihilation.",
         "lore_source": "Quoted by Lector Videx: Gathalamorians 9.41"
     },
@@ -864,7 +864,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Then into the teeth of the enemy we shall stride.",
         "lore_source": "Quoted by Lector Videx: Life of Macharius, 23.19"
     },
@@ -875,7 +875,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Blessed is he who, in death, does his duty.",
         "lore_source": "Quoted by Lector Videx: Conceptua Comprehensis"
     },
@@ -886,7 +886,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Let the foe blunt their blades against our resolve. They will be ash and memories soon enough.",
         "lore_source": "Quoted by Lector Videx: Macharian Duologues Chapter 61"
     },
@@ -897,7 +897,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "By flame shall the unclean be made clean, by fire shall the unholy be made holy.",
         "lore_source": "Quoted by Lector Videx: Gathalamorians 71.6"
     },
@@ -908,7 +908,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Grant a coward the excuse to retreat from the battlefield and he will never fight again.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 7.31"
     },
@@ -919,7 +919,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Verily it is written that the Omnissiah grants His blessing to those who come well-equipped with explosives.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 96.9"
     },
@@ -930,7 +930,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Prayer has power, but I cannot deny fire does, too.",
         "lore_source": "Quoted by Lector Videx: Archmagos Cortiko, Verse 58"
     },
@@ -941,7 +941,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "When thou desires to discourse purely, use binary.",
         "lore_source": "Quoted by Lector Videx: Sayings of the Princeps 65.4"
     },
@@ -952,7 +952,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Such sweet music is the chatter of binary, that has no tongue to lie.",
         "lore_source": "Quoted by Lector Videx: Sayings of the Archmagi, Appendix 4"
     },
@@ -963,7 +963,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Enough fire in the right place can solve any problem.",
         "lore_source": "Quoted by Lector Videx: Colloquialisms of Metalica, Chapter 52"
     },
@@ -974,7 +974,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "Inefficiency is a slope whereupon one slides ever downwards, by degrees, until one reaches the nadir of unknowing.",
         "lore_source": "Quoted by Lector Videx: Canticles Borealis, 6.15"
     },
@@ -985,7 +985,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "If His Will be done, let it be done quickly.",
         "lore_source": "Quoted by Lector Videx: Neodogmatics 71.90"
     },
@@ -996,7 +996,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "If it is worth doing, it is worth doing to completion.",
         "lore_source": "Quoted by Lector Videx: Aphorisms 97"
     },
@@ -1007,7 +1007,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "It’s not work if you enjoy it.",
         "lore_source": "Quoted by Lector Videx: Colloquialisms Minor, Chapter 51"
     },
@@ -1018,7 +1018,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "High risk, high reward.",
         "lore_source": "Quoted by Lector Videx: Magi Pecuniam"
     },
@@ -1029,7 +1029,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "No task that is easy is ever worthwhile.",
         "lore_source": "Quoted by Lector Videx: Amaranthine Verses 78.12"
     },
@@ -1040,7 +1040,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The circuits are complete. The engine of fate is primed. One turn of the cog remains, and the grand machine shall fulfill its purpose.",
         "lore_source": "Quoted by Lector Videx: Logistae Septimus, 21.4"
     },
@@ -1051,7 +1051,7 @@
             "Adeptus Mechanicus"
         ],
         "real_source": "Warhammer 40,000: Mechanicus",
-        "found_on": "https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/",
+        "found_on": "<a href=\"https://www.reddit.com/r/40kLore/comments/asq4rj/collected_quotes_aphorisms_and_psalms_from_the/\">Reddit</a>",
         "text": "The broken in body can blame the bullet or the sword, but the broken is mind have all of creation to curse.",
         "lore_source": "Quoted by Lector Videx: Verses Fulminatus, 59.31"
     }

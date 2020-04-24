@@ -177,7 +177,7 @@ def add_entry(text, real_source, lore_source, tags):
         "real_source_txtonly": real_source_txtonly,
         "text": text,
         "tags": tags,
-        "found_on": "https://wh40k.lexicanum.com/wiki/",
+        "found_on": "<a href=\"https://wh40k.lexicanum.com/wiki/\">Lexicanum</a>",
         "on": now,
     }
     entries.append(entry)

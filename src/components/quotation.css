@@ -2,9 +2,10 @@
 .quotation-wrapper {
     transition: height 0.5s;
     overflow: hidden;
-    padding: 20px;
 
     margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -20,12 +21,12 @@
     animation-duration: 1s;
     animation-fill-mode: backwards;
 
-    color: antiquewhite;
+    color: var(--text-color);
     transition: color 0.5s ease;
 }
 
 .quotation:hover {
-    color: rgb(179, 32, 32);
+    color: var(--text-color-hover);
     transition: color 0.5s ease;
 }
 
@@ -37,24 +38,63 @@
     padding: 10px;
 }
 
-.quotation cite {
+.quotation > cite {
     display:block;
-    font-family: 'Cinzel', cursive;
+    font-family: 'Cinzel';
+    font-style: normal;
     font-size: 15px;
     margin: 2px 20px;
     text-align: right;
 }
 
 
+
 .quotation a {
-    color: antiquewhite;
     text-decoration: none;
-    transition: all 0.2s ease;
+    color: rgba(var(--text-color), 0.8);
+
 }
+
 .quotation a:hover {
-    color: rgb(179, 32, 32);
-    transition: all 0.2s ease;
+    color: rgba(var(--text-color-hover), 0.8);
+    text-decoration: underline;
 }
 .quotation a.active {
     text-decoration: none;
+}
+
+
+.quote-details {
+    margin-top: 15px;
+}
+
+.quote-details > * {
+    font-size: 15px;
+    margin: 2px 20px;
+    font-family: 'Cinzel';
+}
+
+.quote-details cite {
+    display:block;
+    font-style: normal;
+    text-align: right;
+}
+
+.quote-details ul {
+    width: auto;
+    text-align: right;
+    margin: 2px 20px;
+}
+
+.quote-details li {
+    list-style: none;
+    display: inline;
+}
+
+.quote-details li:after {
+    content: " \00b7  ";
+}
+
+.quote-details li:last-child:after {
+    content: none;
 }

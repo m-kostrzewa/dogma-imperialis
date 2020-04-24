@@ -46,9 +46,8 @@ exports.sendCollectionToAlgolia = functions
         }
     });
 
-    collectionIndex.saveObjects(algoliaRecords, (_error, content) => {
-        res.status(200).send("Docs indexed to Algolia successfully: ", currDocIdx);
-    });
+    collectionIndex.saveObjects(algoliaRecords);
+    res.status(200).send("Docs indexed to Algolia successfully: ", currDocIdx);
 })
 
 exports.collectionOnCreate = functions.firestore.document('quotes/{uid}').onCreate(async (snapshot, context) => {
