@@ -1,7 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
+import { RefinementList } from 'react-instantsearch-dom';
 
 import DebouncedSearchBox from './debouncedSearch';
+import DebouncedRefinementList from './debouncedRefListSearch';
 
 import './cogitator.css';
 
@@ -10,10 +12,9 @@ class CogitatorComponent extends React.Component {
 
     render() {
         return (
-        <div class="cogitator-body">
-            <div class="cogitator">
-                <DebouncedSearchBox />
-            </div>
+        <div class="cogitator">
+            <DebouncedSearchBox />
+            <DebouncedRefinementList attribute="tags" searchable/>
         </div>
       );
     }

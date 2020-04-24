@@ -5,6 +5,7 @@ import './index.css';
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, InfiniteHits } from 'react-instantsearch-dom';
 import { connectStateResults } from 'react-instantsearch/connectors';
+
 import CogitatorComponent from './components/cogitator.js';
 import QuotationComponent from './components/quotation.js';
 

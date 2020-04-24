@@ -4,7 +4,7 @@
     overflow: hidden;
 
     margin: auto;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -52,9 +52,7 @@
 .quotation a {
     text-decoration: none;
     color: rgba(var(--text-color), 0.8);
-
 }
-
 .quotation a:hover {
     color: rgba(var(--text-color-hover), 0.8);
     text-decoration: underline;
