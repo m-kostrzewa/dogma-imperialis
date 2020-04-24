@@ -1,45 +1,119 @@
 import json
 import sys
 import re
+from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
 
-totd_urls = [
-    "https://wh40k.lexicanum.com/wiki/Thought_for_the_day_(A_-_H)",
-    "https://wh40k.lexicanum.com/wiki/Thought_for_the_day_(I_-_P)",
-    "https://wh40k.lexicanum.com/wiki/Thought_for_the_day_(Q_-_Z)"
-]
-
 quote_urls = [
+    {
+        "tags": ["Thought for the day"],
+        "url": "https://wh40k.lexicanum.com/wiki/Thought_for_the_day_(A_-_H)",
+    },
+    {
+        "tags": ["Thought for the day"],
+        "url": "https://wh40k.lexicanum.com/wiki/Thought_for_the_day_(I_-_P)",
+    },
+    {
+        "tags": ["Thought for the day"],
+        "url": "https://wh40k.lexicanum.com/wiki/Thought_for_the_day_(Q_-_Z)",
+    },
+
     # https://wh40k.lexicanum.com/wiki/Portal:Quotes
-    "https://wh40k.lexicanum.com/wiki/Quotes_Imperium",
-    "https://wh40k.lexicanum.com/wiki/Quotes_Adeptus_Mechanicus",
-    "https://wh40k.lexicanum.com/wiki/Ecclesiarchy_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Quotes_Astra_Militarum",
-    "https://wh40k.lexicanum.com/wiki/Quotes_Imperial_Navy",
-    "https://wh40k.lexicanum.com/wiki/Inquisition_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Officio_Assassinorum_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Quotes_Space_Marines",
-    "https://wh40k.lexicanum.com/wiki/Squat_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Adeptus_Arbites_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Quotes_Chaos",
-    "https://wh40k.lexicanum.com/wiki/Eldar_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Ork_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Tau_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Dark_Eldar_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Tyranid_Quotes",
+    {
+        "tags": ["Imperium of Man"],
+        "url": "https://wh40k.lexicanum.com/wiki/Quotes_Imperium",
+    },
+    {
+        "tags": ["Imperium of Man", "Adeptus Mechanicus"],
+        "url": "https://wh40k.lexicanum.com/wiki/Quotes_Adeptus_Mechanicus",
+    },
+    {
+        "tags": ["Imperium of Man", "Ecclesiarchy"],
+        "url": "https://wh40k.lexicanum.com/wiki/Ecclesiarchy_Quotes",
+    },
+    {
+        "tags": ["Imperium of Man", "Astra Militarum (Imperial Guard)"],
+        "url": "https://wh40k.lexicanum.com/wiki/Quotes_Astra_Militarum",
+    },
+    {
+        "tags": ["Imperium of Man", "Imperial Navy"],
+        "url": "https://wh40k.lexicanum.com/wiki/Quotes_Imperial_Navy",
+    },
+    {
+        "tags": ["Imperium of Man", "Inquisition"],
+        "url": "https://wh40k.lexicanum.com/wiki/Inquisition_Quotes",
+    },
+    {
+        "tags": ["Imperium of Man", "Officio Assassinorum"],
+        "url": "https://wh40k.lexicanum.com/wiki/Officio_Assassinorum_Quotes",
+    },
+    {
+        "tags": ["Imperium of Man", "Adeptus Astartes (Space Marines)"],
+        "url": "https://wh40k.lexicanum.com/wiki/Quotes_Space_Marines",
+    },
+    {
+        "tags": ["Imperium of Man", "Squat"],
+        "url": "https://wh40k.lexicanum.com/wiki/Squat_Quotes",
+    },
+    {
+        "tags": ["Imperium of Man", "Adeptus Arbites"],
+        "url": "https://wh40k.lexicanum.com/wiki/Adeptus_Arbites_Quotes",
+    },
+    {
+        "tags": ["Chaos"],
+        "url": "https://wh40k.lexicanum.com/wiki/Quotes_Chaos",
+    },
+    {
+        "tags": ["Eldar"],
+        "url": "https://wh40k.lexicanum.com/wiki/Eldar_Quotes",
+    },
+    {
+        "tags": ["Ork"],
+        "url": "https://wh40k.lexicanum.com/wiki/Ork_Quotes",
+    },
+    {
+        "tags": ["Tau"],
+        "url": "https://wh40k.lexicanum.com/wiki/Tau_Quotes",
+    },
+    {
+        "tags": ["Dark eldar"],
+        "url": "https://wh40k.lexicanum.com/wiki/Dark_Eldar_Quotes",
+    },
+    {
+        "tags": ["Tyranid"],
+        "url": "https://wh40k.lexicanum.com/wiki/Tyranid_Quotes",
+    },
 
     # from https://wh40k.lexicanum.com/wiki/Category:Quotes, removed duplicate urls from Portal:Quotes
-    "https://wh40k.lexicanum.com/wiki/Adepta_Sororitas_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Adeptus_Custodes_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Cult_Mechanicus_Religious_Excerpts",
-    "https://wh40k.lexicanum.com/wiki/Necron_Quotes",
-    "https://wh40k.lexicanum.com/wiki/Tactica_Imperium_passages"
+    {
+        "tags": ["Imperium of Man", "Adepta Sororitas (Sisters of Battle)"],
+        "url": "https://wh40k.lexicanum.com/wiki/Adepta_Sororitas_Quotes",
+    },
+    {
+        "tags": ["Imperium of Man", "Adeptus Custodes"],
+        "url": "https://wh40k.lexicanum.com/wiki/Adeptus_Custodes_Quotes",
+    },
+    {
+        "tags": ["Imperium of Man", "Adeptus Mechanicus", "Prayer"],
+        "url": "https://wh40k.lexicanum.com/wiki/Cult_Mechanicus_Religious_Excerpts",
+    },
+    {
+        "tags": ["Necrons"],
+        "url": "https://wh40k.lexicanum.com/wiki/Necron_Quotes",
+    },
+    {
+        "tags": ["Imperium of Man", "Tactica Imperium"],
+        "url": "https://wh40k.lexicanum.com/wiki/Tactica_Imperium_passages"
+    }
 ]
 
 
 entries = []
+now = datetime.now()
+now = "%s" % (now)
+
 
 def cleanup_sources(source):
     if isinstance(source, str):
@@ -76,64 +150,49 @@ def cleanup_sources(source):
 
     return stripped
 
+def txtonly_source(source):
+    if not isinstance(source, str):
+        source_txtonly = source.get_text()
+        # fix spaces
+        return re.sub("\s\s+" , " ", source_txtonly)
+    else:
+        return source
 
 
-def add_entry(text, real_source, lore_source):
+def add_entry(text, real_source, lore_source, tags):
+    lore_source_txtonly = txtonly_source(lore_source)
+    real_source_txtonly = txtonly_source(real_source)
+
     real_source = cleanup_sources(real_source)
     lore_source = cleanup_sources(lore_source)
 
     text = text.replace('\n', '')
+    lore_source_txtonly = lore_source_txtonly.replace('\n', '')
+    real_source_txtonly = real_source_txtonly.replace('\n', '')
 
     entry = {
         "lore_source": lore_source,
+        "lore_source_txtonly": lore_source_txtonly,
         "real_source": real_source,
+        "real_source_txtonly": real_source_txtonly,
         "text": text,
+        "tags": tags,
+        "found_on": "https://wh40k.lexicanum.com/wiki/",
+        "on": now,
     }
     entries.append(entry)
 
 
-for url in totd_urls:
-    sys.stderr.write(f"-----------------------------\nNow scraping {url}\n")
+for qu in quote_urls:
+    sys.stderr.write(f"-----------------------------\nNow scraping {qu['url']}\n")
 
-    r = requests.get(url)
-    soup = BeautifulSoup(r.text, "html.parser")
-
-    tables = soup.find_all("table")
-    for table in tables:
-        if table is None: continue
-
-        is_first_row = True
-        for row in table.find_all("tr"):
-            if is_first_row:
-                is_first_row = False
-                continue
-
-            cells = row.find_all("td")
-            if len(cells) != 3: continue
-
-            _ = cells[0]
-            text = str(cells[1].find(text=True)).strip()
-            source = cells[2]
-
-            add_entry(
-                text=text,
-                real_source=source,
-                lore_source="Thought for the day")
-
-    sys.stderr.write(f"Current number quotes: {len(entries)}\n")
-
-
-
-for url in quote_urls:
-    sys.stderr.write(f"-----------------------------\nNow scraping {url}\n")
-
-    r = requests.get(url)
+    r = requests.get(qu["url"])
     soup = BeautifulSoup(r.text, "html.parser")
 
     unattributed_section = soup.find('span', text=re.compile('Unattributed'))
     if unattributed_section is None:
-        sys.stderr.write(f"Unattributed section not found {url}\n")
-    sys.stderr.write(f"Unattributed section found {url}\n")
+        sys.stderr.write(f"Unattributed section not found {qu['url']}\n")
+    sys.stderr.write(f"Unattributed section found {qu['url']}\n")
 
 
     tables = soup.find_all("table")
@@ -165,7 +224,7 @@ for url in quote_urls:
             real_source = None
 
             if is_unattr:
-                if '/Eldar_Quotes' in url or '/Tau_Quotes' in url:
+                if '/Eldar_Quotes' in qu["url"] or '/Tau_Quotes' in qu["url"]:
                     # Care! should not include Dark_Eldar_Quotes here.
                     lore_source_cell_idx=0
                     text_cell_idx=1
@@ -177,14 +236,22 @@ for url in quote_urls:
                         real_source_cell_idx=2
                     elif len(cells) == 2:
                         text_cell_idx=0
-                        real_source_cell_idx=1
+                        if lore_source_prev_rowspan_num > 0:
+                            real_source_cell_idx = 2
+                        else:
+                            real_source_cell_idx = 1
                         lore_source_cell_idx=-1 #!
             else:
-                if '/Tactica_Imperium_passages' in url:
+                if '/Tactica_Imperium_passages' in qu["url"]:
                     text_cell_idx=0
                     real_source_cell_idx=1
                     lore_source_cell_idx=-1
                     lore_source = "Tactica Imperium"
+                elif '/Thought_for_the_day' in qu["url"]:
+                    text_cell_idx=1
+                    real_source_cell_idx=2
+                    lore_source_cell_idx=-1
+                    lore_source = "Thought for the day"
                 else:
                     lore_source_cell_idx=0
                     text_cell_idx=1
@@ -268,7 +335,8 @@ for url in quote_urls:
             add_entry(
                 text=text,
                 real_source=real_source,
-                lore_source=lore_source)
+                lore_source=lore_source,
+                tags=qu["tags"])
 
         sys.stderr.write(f"After table; current number of quotes: {len(entries)}\n")
 

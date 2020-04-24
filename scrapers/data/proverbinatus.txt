@@ -1,0 +1,1134 @@
+[
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"There is no such thing as innocence - only varying degrees of guilt.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Black Templars(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["innocence","guilt"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Reason begets doubt; doubt begets heresy.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(5th edition)",
+        "lore_source": "Unknown",
+        "topics": ["reason","doubt"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Only the awkward question; only the foolish ask twice.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Space Marines(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["awkward","question"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Success is measured in blood; yours or your enemy's.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Space Marines(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["success"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The reward for treachery is retribution.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(5th edition)",
+        "lore_source": "Unknown",
+        "topics": ["treachery"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Hope is the beginning of unhappiness.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["hope"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Even a man who has nothing can still offer his life.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(5th edition)",
+        "lore_source": "Unknown",
+        "topics": ["sacrifice"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Inspiration grows from the barrel of a gun.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 400000: Compendium",
+        "lore_source": "Unknown",
+        "topics": ["inspiration","gun"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Walk softly and carry a big gun.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Space Marines(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["caution","gun"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"A mind without purpose will wander in dark places.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["purposelessness"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"A moment of laxity spawns a lifetime of heresy.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Dark Angels(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["laxity"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"A small mind is a tidy mind.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["small mind"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"A suspicious mind is a healthy mind.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["suspicion"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"An open mind is like a fortress with its gates unbarred and unguarded.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["open mind"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Call no man happy until he is dead.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Imperial Guard(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["happiness"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Death is the servant of the righteous.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Chaos Space Marines(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["death"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Doubt is a sign of weakness.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["doubt"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Excuses are the refuge of the weak.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["excuses"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Foolish are those who fear nothing, yet claim to know everything.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["knowledge"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"For a warrior the only crime is cowardice.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000: Rogue Trader",
+        "lore_source": "Unknown",
+        "topics": ["cowardice"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Happiness is a delusion of the weak.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["happiness"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Hate enriches.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["hatred"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Heresy grows from idleness.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Black Templars(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["idleness"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Success is commemorated. Failure merely remembered.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["success","failure"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The rewards of tolerance are treachery and betrayal.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["tolerance"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The truly wise are always afraid.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["wisdom"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Through the destruction of our enemies we earn our salvation.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["victory"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Prayer cleanses the soul, but pain cleanses the body.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["prayer","pain"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Innocence proves nothing.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Black Templars(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["innocence"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"There is nothing to fear but failure.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Black Templars(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["failure"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"To question is to doubt.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["question"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Reason is the cloak of traitors.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["reason"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Ruthlessness is the kindness of the wise.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["ruthlessness"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Sorrow awaits the foolhardy.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Armageddon(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["fool"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The burden of failure is the most terrible punishment of all.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000 4th edition",
+        "lore_source": "Unknown",
+        "topics": ["failure"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The common man is like a worm in the gut of a corpse, trapped inside a prison of cold flesh, helpless and uncaring, unaware even of the inevitability of its own doom.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Imperialis",
+        "lore_source": "Unknown",
+        "topics": ["doom"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The difference between heresy and treachery is ignorance.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["treachery"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The dissident invites only retribution.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["dissidence"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The justice of your action is measured by the strength of your conviction.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["justice","conviction"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The keenest blade is righteous hatred.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["hatred"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The most deviant mind is often concealed in an unblemished body.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(5th edition)",
+        "lore_source": "Unknown",
+        "topics": ["deviance"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The mutant bears his heresy on the outside, the traitor hides it in his soul.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["treachery"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The only reaction to treachery is vengeance.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["treachery"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The road to purity is drenched in the blood of the martyred.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Imperial Guard(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["purity"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The seed of heresy rests in the minds of reasonable men.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["reason"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The traitorʹs hand lies closer than you think.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "The Traitor's Hand(novel)",
+        "lore_source": "Unknown",
+        "topics": ["treachery"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The universe is a big place and, whatever happens, you will not be missed...",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(5th edition)",
+        "lore_source": "Unknown",
+        "topics": []
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The wage of negligence is utter destruction.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Armageddon(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["negligence"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The wise man learns from the deaths of others.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["wisdom"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"There are no answers. Only death.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000: Rogue Trader",
+        "lore_source": "Unknown",
+        "topics": ["answers","death"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"They who feast today do so in ignorance of their mortality. Tomorrow they must die or change.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(5th edition)",
+        "lore_source": "Unknown",
+        "topics": []
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Timidity begets indecision; indecision begets treachery.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["timidity","indecision"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"To compromise is to err.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["compromise"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"To err is to invite retribution.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000: Rogue Trader",
+        "lore_source": "Unknown",
+        "topics": ["error"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"To withdraw in disgust is not apathy.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["disgust","apathy"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Truth begets hatred.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Black Templars(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["truth","hatred"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Trying to understand weakens the will to act.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Black Templars(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["understanding"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Victory needs no explanation, defeat allows none.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["victory","defeat"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Vigilance is the brother of truth.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Necrons(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["vigilance","truth"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Vigilance is your shield.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Necrons(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["vigilance"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"You are not required to think, only to act.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["thought"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Zeal is its own excuse.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["zeal"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"A broad mind lacks focus.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["open mind"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"A coward always seeks compromise.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["cowardice","compromise"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"A logical argument must be dismissed with absolute conviction!",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["logic"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"A questioning servant is more dangerous than an ignorant heretic.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["question"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Accept your lot!",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["fortune"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"An empty mind is a loyal mind.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Craftworld Eldar(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["intelligence","loyalty"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Analysis is the bane of conviction.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["analysis"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Appeasement is a curse.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["appeasement"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Be strong in your ignorance.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Imperial Guard(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["ignorance"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Blessed is the mind too small for doubt.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["doubt"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Burn the Heretic. Kill the Mutant. Purge the Unclean.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["heresy","mutation","unclean"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Compromise is akin to treachery.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["compromise"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Contemplation is the womb of treachery.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["Contemplation"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Death brings its own reward.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000: Rogue Trader",
+        "lore_source": "Unknown",
+        "topics": ["death"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Death is the only answer.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000: Rogue Trader",
+        "lore_source": "Unknown",
+        "topics": ["death"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Every man is a spark in the darkness. By the time he is noticed he is gone forever. A retinal after-image that fades and is obscured by newer, brighter lights.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000: Rogue Trader",
+        "lore_source": "Unknown",
+        "topics": []
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Facts are chains that bind perception and fetter truth. For a man can remake the world if he has a dream and no facts to cloud his mind.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["facts"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"For those who seek perfection there can be no rest this side of the grave.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["perfection"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Forgiveness is a sign of weakness.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Space Marines(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["forgiveness"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"In an hour of darkness a blind man is the best guide. In an age of insanity look to the madman to show the way.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["insanity"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Intellect is a mask for traitors.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["intellect"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Intolerance is a blessing.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["intolerance","tolerance"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Knowledge is power, hide it well.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["knowledge"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Knowledge is to be feared!",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["knowledge"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Leniency is a sign of weakness!",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["Leniency"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Life is a prison, death a release.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Black Templars(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["life","death"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Mercy is a sign of weakness.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Space Marines(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["mercy"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Negotiation is surrender.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["Negotiation"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Never forget, never forgive.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Dark Angels(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["forgiveness"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Not even the dead know the end of war.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Craftworld Eldar(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["war"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Only in death does duty end.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(3rd edition)",
+        "lore_source": "Unknown",
+        "topics": ["duty"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Only the insane have strength enough to prosper.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Space Marines(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["insanity"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Peace is Hell.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000: Rogue Trader",
+        "lore_source": "Unknown",
+        "topics": ["peace"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Perseverance and silence are the highest virtues.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["perseverance"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Only the weak question.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Imperial Armour IV",
+        "lore_source": "Unknown",
+        "topics": ["question"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"All souls cry out for salvation.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Dark Angels(3rd Edition)",
+        "lore_source": "Unknown",
+        "topics": []
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"All mortal life is folly that does not feed the spirit.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": []
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"As the mind to the body so the soul to the spirit, as death to the mortal man so failure to the immortal, such is the price of all ambition.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["ambition"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Blessed are the gun makers.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["gun"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Blind faith is a just cause.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["faith"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Curse now the death in vain.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Space Marines(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["death"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Damnation is eternal.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Dark Angels(3rd Edition)",
+        "lore_source": "Unknown",
+        "topics": ["damnation"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Dark dreams lie upon the heart.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": []
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Fear the shadows; despise the night. There are horrors that no man can face and survive.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Dark Eldar (3rd Edition)",
+        "lore_source": "Unknown",
+        "topics": []
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Heresy must be met with hatred.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["heresy"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Know thine enemy.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex: Dark Eldar (3rd Edition)",
+        "lore_source": "Unknown",
+        "topics": ["enemy"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Sins hidden in the heart turn all into decay.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(4th edition)",
+        "lore_source": "Unknown",
+        "topics": ["sin"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Claims of innocence mean nothing; they serve only to prove a foolish lack of caution.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Codex Imperialis",
+        "lore_source": "Unknown",
+        "topics": ["innocence"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"The tools of salvation are faith and bullets.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["salvtion","faith"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"A treacherous thought is as dangerous as a hundred bullets.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["treachery"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Doubt is the fatal flaw in any armour.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["doubt"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"To punish the traitor is reward in itself.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["betrayal"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Enlightenment is a myth; we do not need to understand in order to hate.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["enlightenment"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Death and duty are all we must give.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["death","duty"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Betrayal's tithe is the hangman's noose.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["betrayal"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"True happiness stems only from duty.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["happiness","duty"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"It is better for a man to be afraid than happy.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["fear","happiness"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"To search for answers is to beat a path to damnation.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["knowledge"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"To err is human; To err again is treachery.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["err"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"A closed mind is defence against sedition.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["closed mind","sedition"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Knowledge is power; Power corrupts.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["knowledge"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Better crippled in body than corrupt in mind.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["corruption"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"To relinquish contempt is capitulation.",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["contempt"]
+    },
+    {
+        "on": "2020-04-24 16:41:15.814784",
+        "text":"Do not let fear conquer hate!",
+        "tags": ["Imperium of Man"],
+        "found_on": "http://www.proverbinatus.com",
+        "real_source": "Warhammer 40000(6th edition)",
+        "lore_source": "Unknown",
+        "topics": ["fear","hate"]}]
