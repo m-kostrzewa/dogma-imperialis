@@ -7,11 +7,11 @@ body {
     padding: 0;
     margin: 0;
     background-color: rgba(40,40,40);
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Cinzel';
     color: antiquewhite;
 }
 
-nav {
+/* nav {
     background-color: rgba(60,60,60);
     overflow: hidden;
 }
@@ -31,7 +31,7 @@ nav a:hover {
 nav a.active {
     background-color: rgb(179, 32, 32);
     transition: background-color 0.2s ease;
-}
+} */
 
 #page-container {
     position: relative;
@@ -41,7 +41,7 @@ nav a.active {
 }
 
 #content-wrap {
-    padding: 0 0 30px 0;
+    padding: 0 0 50px 0;
 }
 
 footer {
@@ -50,6 +50,7 @@ footer {
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
+    font-size: 10px;
 }
 
 .no-results {
@@ -91,9 +92,9 @@ footer {
     display: block;
     background-color: rgb(117, 17, 17);
     border: none;
-    padding: 10px;
+    padding: 15px;
     text-decoration: none;
     cursor: pointer;
-    margin: auto;
+    margin: 20px auto;
     color: antiquewhite;
 }
