@@ -90,4 +90,13 @@ footer {
     cursor: pointer;
     margin: 20px auto;
     color: antiquewhite;
+    font-family: 'Cinzel';
+}
+
+
+@media screen and (min-width: 600px) {
+    /* hide on mobile */
+   .mobile-hide {
+      display: none !important;
+   }
 }

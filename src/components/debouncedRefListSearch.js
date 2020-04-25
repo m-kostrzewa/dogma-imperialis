@@ -19,12 +19,7 @@ export default connectRefinementList(({
 
   return (
     <div>
-        <input
-            type="search"
-            placeholder="filter_tags_"
-            id="tagRefineSearch"
-            onChange={onChange}
-        />
+
         <ul>
         {items.map((item) => (
             <li key={item.label}>
@@ -49,6 +44,14 @@ export default connectRefinementList(({
             </span>
             </li>
         ))}
+        <li>
+        <input
+            type="search"
+            placeholder="tag..."
+            id="tagRefineSearch"
+            onChange={onChange}
+        />
+        </li>
         </ul>
     </div>
   );

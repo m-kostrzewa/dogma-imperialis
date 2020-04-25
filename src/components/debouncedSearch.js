@@ -20,7 +20,7 @@ export default connectSearchBox(({ refine }) => {
 
   return (
     <div>
-        <span><input id="mainSearch" placeholder="query_data_looms_" type="search" onChange={onChange} /></span>
+        <span><input id="mainSearch" placeholder="search..." type="search" onChange={onChange} /></span>
     </div>
   );
 });
