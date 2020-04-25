@@ -73,19 +73,20 @@ class QuotationComponent extends React.Component {
 
     const detailsSection = (
       <div className="quote-details">
+        <span>Realspace source:</span>
         <cite>
           <span dangerouslySetInnerHTML={{ __html: this.state.quotation.real_source }} />
         </cite>
+        <span>Found on:</span>
         <cite>
-          Found on:
-          {' '}
           <span dangerouslySetInnerHTML={{ __html: this.state.quotation.found_on }} />
         </cite>
+        <span>Tags:</span>
+        <span>
         <ul>
-          Tags:
-          {' '}
-          {tags}
+            {tags}
         </ul>
+        </span>
       </div>
     );
     return detailsSection;

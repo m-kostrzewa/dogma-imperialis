@@ -7,9 +7,6 @@
 * https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrers-restrictions
 
 * UX - ppl don't know they can click on tags
-* UX - ppl don't know which search bar is the main one.
-
-* UI - real source and tags are weird, ppl don't know what they are. rethink
 * UI - load more has no transistion.
 
 * MEssed up Excerpted from the Dogma Ommiastra

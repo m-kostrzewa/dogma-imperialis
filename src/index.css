@@ -36,8 +36,8 @@ nav a.active {
 #page-container {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+
     max-width: 1000px;
     margin: auto;
 
@@ -48,6 +48,9 @@ nav a.active {
 
 
 footer {
+    margin: auto;
+    margin-bottom: 10px;
+    justify-self: end;
     font-size: 10px;
 }
 

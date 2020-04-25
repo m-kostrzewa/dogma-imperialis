@@ -39,7 +39,7 @@
 }
 
 .quotation > cite {
-    display:block;
+    display: block;
     font-family: 'Cinzel';
     font-style: normal;
     font-size: 15px;
@@ -63,35 +63,44 @@
 
 
 .quote-details {
+    display: flex;
+    flex-flow: row wrap;
+
     margin-top: 15px;
     color: antiquewhite;
 }
 
+.quote-details span {
+    flex-basis: 49%;
+    text-align: right;
+}
+
 .quote-details > * {
     font-size: 15px;
-    margin: 2px 20px;
     font-family: 'Cinzel';
 }
 
 .quote-details cite {
-    display:block;
+    flex-basis: 49%;
+
     font-style: normal;
     text-align: right;
 }
 
 .quote-details ul {
-    width: auto;
-    text-align: right;
-    margin: 2px 20px;
-}
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+  }
 
 .quote-details li {
-    list-style: none;
-    display: inline;
+    padding-left: 3px;
 }
 
 .quote-details li:after {
-    content: " \00b7  ";
+    content: " \00b7";
 }
 
 .quote-details li:last-child:after {
