@@ -1,7 +1,5 @@
 input[type=search] {
-    display:block;
-    width: 800px;
-    margin: auto;
+    width: 100%;
     padding: 10px;
 
     background-color: rgba(60, 60, 60);
@@ -50,13 +48,8 @@ input[type=search] {
 }
 
 .cogitator ul {
-    margin: auto;
-    width: 800px;
     text-align: center;
     list-style: none;
-    padding-left: 0;
-    margin-top: 10px;
-    margin-bottom: 100px;
 }
 
 .cogitator li {

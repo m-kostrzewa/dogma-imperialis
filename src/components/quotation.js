@@ -8,7 +8,7 @@ class QuotationComponent extends React.Component {
 
     const fullText = props.hit.text;
 
-    var charIdx = fullText.length;
+    let charIdx = fullText.length;
     if (fullText.length > 200) {
       charIdx = 200;
       while (fullText[charIdx] != ' ' && charIdx <= fullText.length) {
@@ -20,6 +20,7 @@ class QuotationComponent extends React.Component {
 
     this.onMouseEnter = this.onMouseEnter.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.onClick = this.onClick.bind(this);
     this.defaultTextToShow = this.defaultTextToShow.bind(this);
     this.expandedTextToShow = this.expandedTextToShow.bind(this);
 
@@ -32,6 +33,7 @@ class QuotationComponent extends React.Component {
       alwaysShowText,
       expandShowText,
       detailsSection: '',
+      displayEverything: false,
     };
 
     this.state.actualText = this.defaultTextToShow();
@@ -42,6 +44,31 @@ class QuotationComponent extends React.Component {
   }
 
   onMouseEnter(event) {
+    this.setState({
+      displayEverything: true,
+    });
+  }
+
+  onClick(event) {
+    this.setState((prev) => ({
+        forceDetailsOn: !prev.forceDetailsOn,
+    }));
+  }
+
+  onMouseLeave(event) {
+    if (!this.state.forceDetailsOn) {
+      this.setState({
+        displayEverything: false,
+      });
+    } else {
+      this.setState({
+        displayEverything: true,
+      });
+    }
+  }
+
+
+  generateDetailsSection() {
     const tags = this.state.quotation.tags.map((x) => <li className="tag">{x}</li>);
 
     const detailsSection = (
@@ -50,24 +77,18 @@ class QuotationComponent extends React.Component {
           <span dangerouslySetInnerHTML={{ __html: this.state.quotation.real_source }} />
         </cite>
         <cite>
-          Found on: <span dangerouslySetInnerHTML={{ __html: this.state.quotation.found_on }} />
+          Found on:
+          {' '}
+          <span dangerouslySetInnerHTML={{ __html: this.state.quotation.found_on }} />
         </cite>
         <ul>
-          Tags: {tags}
+          Tags:
+          {' '}
+          {tags}
         </ul>
       </div>
     );
-    this.setState({
-      actualText: this.expandedTextToShow(),
-      detailsSection,
-    });
-  }
-
-  onMouseLeave(event) {
-    this.setState({
-      actualText: this.defaultTextToShow(),
-      detailsSection: '',
-    });
+    return detailsSection;
   }
 
   defaultTextToShow() {
@@ -83,14 +104,24 @@ class QuotationComponent extends React.Component {
   }
 
   render() {
+    let text;
+    let details;
+    if (this.state.displayEverything) {
+      text = this.expandedTextToShow();
+      details = this.generateDetailsSection();
+    } else {
+      text = this.defaultTextToShow();
+      details = '';
+    }
+
     return (
-      <div className="quotation-wrapper" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} ref={this.wrapperRef}>
+      <div className="quotation-wrapper" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.onClick} ref={this.wrapperRef}>
         <section ref={this.sectionRef} className="quotation">
           <q>
-            {this.state.actualText}
+            {text}
           </q>
           <cite><div dangerouslySetInnerHTML={{ __html: this.state.quotation.lore_source }} /></cite>
-          {this.state.detailsSection}
+          {details}
         </section>
       </div>
     );
