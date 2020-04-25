@@ -94,7 +94,7 @@ footer {
 }
 
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 1400px) {
     /* hide on mobile */
    .mobile-hide {
       display: none !important;
