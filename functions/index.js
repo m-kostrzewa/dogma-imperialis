@@ -4,6 +4,60 @@ var functions = require('firebase-functions');
 var admin = require('firebase-admin');
 var algoliasearch = require('algoliasearch');
 
+const nodemailer = require('nodemailer');
+const cors = require('cors')({ origin: true });
+
+const gmailEmail = functions.config().gmail.email;
+const gmailPassword = functions.config().gmail.password;
+const mailTransport = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: gmailEmail,
+    pass: gmailPassword
+  }
+});
+
+exports.contactFormSubmit = functions.https.onRequest((req, res) => {
+
+    mailTransport.verify(function(error, success) {
+        if (error) {
+            console.log(error);
+            res.status(500).send({
+                message: "transport verify error"
+            });
+        } else {
+            cors(req, res, () => {
+                if (req.method !== 'POST') {
+                    return;
+                }
+
+                const mailStuff = {
+                    from: "dogma-imperialis@michal-kostrzewa.com",
+                    replyTo: req.body.contact_email,
+                    to: "contact@michal-kostrzewa.com",
+                    subject: `Correction for dogma-imperialis`,
+                    text: `There is a new suggestion: \n${JSON.stringify(req.body, null, 2)}`,
+                };
+
+                mailTransport.sendMail(mailStuff, function(error, info){
+                    if(error){
+                        res.status(500).send({
+                            message: "send mail error"
+                        });
+                    }
+                    res.status(200).send({
+                        message: "success"
+                    });
+                });
+            });
+        }
+    });
+
+});
+
+
+
+
 admin.initializeApp();
 const db = admin.firestore();
 
@@ -47,7 +101,7 @@ exports.sendCollectionToAlgolia = functions
     });
 
     collectionIndex.saveObjects(algoliaRecords);
-    res.status(200).send("Docs indexed to Algolia successfully: ", currDocIdx);
+    res.status(200).end();
 })
 
 exports.collectionOnCreate = functions.firestore.document('quotes/{uid}').onCreate(async (snapshot, context) => {

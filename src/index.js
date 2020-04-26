@@ -22,7 +22,7 @@ const Results = connectStateResults(
   ({ searchState, searchResults, children }) => (searchResults && searchResults.nbHits !== 0 ? (
     children
   ) : (
-    <div class="no-results">no_results_found_</div>
+    <div class="no-results">No results found</div>
   )),
 );
 

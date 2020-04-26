@@ -1,6 +1,9 @@
 import React from 'react';
 import './quotation.css';
 
+import QuotationEditForm from './quotationEditForm.js';
+
+
 
 class QuotationComponent extends React.Component {
   constructor(props) {
@@ -23,6 +26,7 @@ class QuotationComponent extends React.Component {
     this.onClick = this.onClick.bind(this);
     this.defaultTextToShow = this.defaultTextToShow.bind(this);
     this.expandedTextToShow = this.expandedTextToShow.bind(this);
+    this.setCanHide = this.setCanHide.bind(this);
 
     this.wrapperRef = React.createRef();
     this.sectionRef = React.createRef();
@@ -34,6 +38,7 @@ class QuotationComponent extends React.Component {
       expandShowText,
       detailsSection: '',
       displayEverything: false,
+      canHide: true,
     };
 
     this.state.actualText = this.defaultTextToShow();
@@ -44,18 +49,35 @@ class QuotationComponent extends React.Component {
   }
 
   onMouseEnter(event) {
+      if(!this.state.canHide) {
+          return;
+      }
     this.setState({
       displayEverything: true,
     });
   }
 
   onClick(event) {
+    if(!this.state.canHide) {
+        return;
+    }
+
     this.setState((prev) => ({
         forceDetailsOn: !prev.forceDetailsOn,
     }));
   }
 
+  setCanHide(val) {
+      this.setState({
+          canHide: val,
+      });
+  }
+
   onMouseLeave(event) {
+    if(!this.state.canHide) {
+        return;
+    }
+
     if (!this.state.forceDetailsOn) {
       this.setState({
         displayEverything: false,
@@ -77,7 +99,7 @@ class QuotationComponent extends React.Component {
         <cite>
           <span dangerouslySetInnerHTML={{ __html: this.state.quotation.real_source }} />
         </cite>
-        <span>Found on:</span>
+        <span>Credit:</span>
         <cite>
           <span dangerouslySetInnerHTML={{ __html: this.state.quotation.found_on }} />
         </cite>
@@ -123,6 +145,8 @@ class QuotationComponent extends React.Component {
           </q>
           <cite><div dangerouslySetInnerHTML={{ __html: this.state.quotation.lore_source }} /></cite>
           {details}
+
+          {this.state.displayEverything ? <QuotationEditForm quotation={this.state.quotation} canHideCallback={this.setCanHide} /> : ""}
         </section>
       </div>
     );

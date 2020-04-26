@@ -11,28 +11,6 @@ body {
     color: antiquewhite;
 }
 
-/* nav {
-    background-color: rgba(60,60,60);
-    overflow: hidden;
-}
-nav a {
-    display: block;
-    float: right;
-    text-align: center;
-    padding: 10px 10px;
-    text-decoration: none;
-    color: antiquewhite;
-    transition: background-color 0.2s ease;
-}
-nav a:hover {
-    background-color: rgb(146, 72, 72);
-    transition: background-color 0.2s ease;
-}
-nav a.active {
-    background-color: rgb(179, 32, 32);
-    transition: background-color 0.2s ease;
-} */
-
 #page-container {
     display: flex;
     flex-flow: column nowrap;
@@ -84,17 +62,35 @@ footer {
     padding: 0;
 }
 
-.ais-InfiniteHits-loadMore  {
+
+.ais-InfiniteHits-loadMore, .button-small {
     display: block;
+
+    margin: 5px auto;
+
     background-color: rgb(117, 17, 17);
+    background-image: linear-gradient(rgb(117, 17, 17), rgb(85, 11, 11));
+
+    border-radius: 2px;
+
+    max-width: 300px;
     border: none;
-    padding: 15px;
+    padding: 5px 15px;
     text-decoration: none;
     cursor: pointer;
-    margin: 20px auto;
     color: antiquewhite;
     font-family: 'Cinzel';
+    font-size: 15px;
 }
+
+.ais-InfiniteHits-loadMore:hover, .button-small:hover {
+    background-image: linear-gradient(rgb(146, 11, 11), rgb(117, 11, 11));
+}
+
+.ais-InfiniteHits-loadMore:active, .button-small:active {
+    background-image: linear-gradient(rgb(85, 11, 11), rgb(117, 17, 17));
+}
+
 
 
 @media screen and (max-width: 1400px) {

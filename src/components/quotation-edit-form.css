@@ -1,0 +1,42 @@
+.quotation-edit-form form {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 15px;
+
+    width: 100%;
+    color: var(--text-color);
+}
+
+.quotation-edit-form p {
+    flex-basis: 20%;
+    text-align: right;
+    margin: 5px auto;
+}
+
+.quotation-edit-form-field {
+    flex-basis: 75%;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 10px;
+
+    background-color: rgba(40, 40, 40, 1);
+    background-image: linear-gradient(rgba(130, 130, 130, 1), rgba(160, 160, 160, 1));
+
+    background-blend-mode: overlay;
+
+    border: 1px solid rgba(60, 60, 60, 1);
+    border-radius: 3px;
+
+    font-family: 'Cinzel';
+    text-align: left;
+    color: var(--text-color);
+}
+
+.quotation-edit-form-lower-div {
+    margin-top: 10px;
+}
+
+.quotation-edit-form-lower-div span {
+    max-width: 90%;
+}

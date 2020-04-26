@@ -14,7 +14,6 @@ const config = {
 
 class Firebase {
   constructor() {
-    console.log(config);
     firebase.initializeApp(config);
     // app.analytics();
     this.db = firebase.firestore();
