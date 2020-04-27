@@ -4,7 +4,6 @@ import './quotation.css';
 import QuotationEditForm from './quotationEditForm.js';
 
 
-
 class QuotationComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -24,9 +23,10 @@ class QuotationComponent extends React.Component {
     this.onMouseEnter = this.onMouseEnter.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
     this.onClick = this.onClick.bind(this);
+    this.onFormClick = this.onFormClick.bind(this);
     this.defaultTextToShow = this.defaultTextToShow.bind(this);
     this.expandedTextToShow = this.expandedTextToShow.bind(this);
-    this.setCanHide = this.setCanHide.bind(this);
+    this.formDoneCallback = this.formDoneCallback.bind(this);
 
     this.wrapperRef = React.createRef();
     this.sectionRef = React.createRef();
@@ -38,44 +38,48 @@ class QuotationComponent extends React.Component {
       expandShowText,
       detailsSection: '',
       displayEverything: false,
-      canHide: true,
+      showEditForm: false,
+      forceUpdate: false,
     };
 
     this.state.actualText = this.defaultTextToShow();
   }
 
+    componentDidMount() {
+      // initially it's undefined so the first transition is broken.. so force set it to 0px.
+      // ugly hack with on mouse enter but we must see initial text for this to work...
+      this.onMouseEnter();
+      this.wrapperRef.current.style.height = '0px';
+      this.onMouseLeave();
+  }
+
   componentDidUpdate() {
+      console.log('update', this.state.quotation.text)
     this.wrapperRef.current.style.height = `${this.sectionRef.current.clientHeight}px`;
   }
 
   onMouseEnter(event) {
-      if(!this.state.canHide) {
-          return;
-      }
+    if (this.state.showEditForm) {
+      return;
+    }
     this.setState({
       displayEverything: true,
     });
   }
 
   onClick(event) {
-    if(!this.state.canHide) {
-        return;
+    if (this.state.showEditForm) {
+      return;
     }
 
     this.setState((prev) => ({
-        forceDetailsOn: !prev.forceDetailsOn,
+      forceDetailsOn: !prev.forceDetailsOn,
     }));
   }
 
-  setCanHide(val) {
-      this.setState({
-          canHide: val,
-      });
-  }
-
   onMouseLeave(event) {
-    if(!this.state.canHide) {
-        return;
+    if (this.state.showEditForm) {
+      return;
     }
 
     if (!this.state.forceDetailsOn) {
@@ -105,9 +109,9 @@ class QuotationComponent extends React.Component {
         </cite>
         <span>Tags:</span>
         <span>
-        <ul>
+          <ul>
             {tags}
-        </ul>
+          </ul>
         </span>
       </div>
     );
@@ -124,6 +128,18 @@ class QuotationComponent extends React.Component {
 
   expandedTextToShow() {
     return this.state.alwaysShowText + this.state.expandShowText;
+  }
+
+  onFormClick(event) {
+    this.setState((prev) => ({
+      showEditForm: !prev.showEditForm,
+    }));
+  }
+
+  formDoneCallback() {
+    this.setState((prev) => ({
+      showEditForm: false,
+    }));
   }
 
   render() {
@@ -146,7 +162,9 @@ class QuotationComponent extends React.Component {
           <cite><div dangerouslySetInnerHTML={{ __html: this.state.quotation.lore_source }} /></cite>
           {details}
 
-          {this.state.displayEverything ? <QuotationEditForm quotation={this.state.quotation} canHideCallback={this.setCanHide} /> : ""}
+          {this.state.displayEverything ? <input type="button" className="button-small" onClick={this.onFormClick} value="Correction" /> : '' }
+
+          {this.state.showEditForm ? <QuotationEditForm quotation={this.state.quotation} doneCallback={this.formDoneCallback} /> : ''}
         </section>
       </div>
     );

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, InfiniteHits } from 'react-instantsearch-dom';
+import { InstantSearch, InfiniteHits, Configure } from 'react-instantsearch-dom';
 import { connectStateResults } from 'react-instantsearch/connectors';
 
 import CogitatorComponent from './components/cogitator.js';
@@ -48,6 +48,9 @@ ReactDOM.render(
             indexName="prod_QUOTES"
             searchClient={searchClient}
           >
+            <Configure
+                hitsPerPage={10}
+            />
             <CogitatorComponent />
             <Results>
               <InfiniteHits hitComponent={QuotationComponent} />

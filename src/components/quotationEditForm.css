@@ -14,16 +14,14 @@
     width: 100%;
 }
 
-.quotation-edit-form p {
+.quotation-edit-from-label {
     flex-basis: 20%;
     text-align: right;
     margin: 5px auto;
 }
 
 .quotation-edit-form-field {
-    /* flex-basis: 75%; */
     flex-grow: 1;
-    /* flex: 1; */
 
     padding: 0;
     margin: 0;
@@ -44,9 +42,14 @@
 }
 
 .quotation-edit-form-lower-div {
+    text-align: center;
     margin-top: 10px;
 }
 
 .quotation-edit-form-lower-div span {
     max-width: 90%;
+}
+
+.quotation-edit-form-status-text {
+    text-align: center;
 }
