@@ -85,40 +85,56 @@ class QuotationComponent extends React.Component {
         <div className="quotation-edit-form">
           <input type="button" className="button-small" onClick={this.onClick} value="Close correction form"/>
           <form onSubmit={this.onSubmit}>
-            <p>Quotation text:</p>
-            <textarea required class="quotation-edit-form-field" name="new_text" rows="4"
-                value={this.state.formData.new_text} onChange={this.onChange} />
+            <div class="form-row">
+                <p>Quotation text:</p>
+                <textarea required class="quotation-edit-form-field" name="new_text" rows="4"
+                    value={this.state.formData.new_text} onChange={this.onChange} />
+            </div>
 
-            <p>Lore source: </p>
-            <textarea required class="quotation-edit-form-field" name="new_lore_source" rows="2"
-                value={this.state.formData.new_lore_source} onChange={this.onChange} />
+            <div class="form-row">
+                <p>Lore source: </p>
+                <textarea required class="quotation-edit-form-field" name="new_lore_source" rows="2"
+                    value={this.state.formData.new_lore_source} onChange={this.onChange} />
+            </div>
 
-            <p>Realspace source: </p>
-            <textarea required class="quotation-edit-form-field" name="new_real_source" rows="2"
-                value={this.state.formData.new_real_source} onChange={this.onChange} />
+            <div class="form-row">
+                <p>Realspace source: </p>
+                <textarea required class="quotation-edit-form-field" name="new_real_source" rows="2"
+                    value={this.state.formData.new_real_source} onChange={this.onChange} />
+            </div>
 
-            <p>Credit: </p>
-            <textarea required class="quotation-edit-form-field" name="new_credit" rows="2"
-                value={this.state.formData.new_credit} onChange={this.onChange} />
+            <div class="form-row">
+                <p>Credit: </p>
+                <textarea required class="quotation-edit-form-field" name="new_credit" rows="2"
+                    value={this.state.formData.new_credit} onChange={this.onChange} />
+            </div>
 
+            <div class="form-row">
             <p>Tags: </p>
             <textarea required class="quotation-edit-form-field" name="new_tags_str" rows="1"
                 value={this.state.formData.new_tags_str} onChange={this.onChange} />
+            </div>
 
+            <div class="form-row">
             <p>Contact email: </p>
             <input required class="quotation-edit-form-field" name="contact_email" type="email"
                 placeholder="This email will be used in case moderator has any questions"
                 value={this.state.formData.contact_email} onChange={this.onChange} />
+            </div>
 
+            <div class="form-row">
             <p>Notes: </p>
             <textarea class="quotation-edit-form-field" name="additional_notes" rows="2"
                 placeholder="(Optional) additional notes for moderator"
                 value={this.state.formData.additional_notes} onChange={this.onChange} />
+            </div>
 
+            <div class="form-row">
             <p>Nickname: </p>
             <textarea class="quotation-edit-form-field" name="want_credit_nickname" rows="1"
                 placeholder="(Optional) your nickname for credit"
                 value={this.state.formData.want_credit_nickname} onChange={this.onChange} />
+            </div>
 
             <div class="quotation-edit-form-lower-div">
                 <span>A moderator will review and may adjust your submission before adding it to database.

@@ -1,10 +1,17 @@
 .quotation-edit-form form {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     font-size: 15px;
+    align-items:flex-end;
 
     width: 100%;
     color: var(--text-color);
+}
+
+.form-row {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
 }
 
 .quotation-edit-form p {
@@ -14,7 +21,10 @@
 }
 
 .quotation-edit-form-field {
-    flex-basis: 75%;
+    /* flex-basis: 75%; */
+    flex-grow: 1;
+    /* flex: 1; */
+
     padding: 0;
     margin: 0;
     margin-top: 5px;
