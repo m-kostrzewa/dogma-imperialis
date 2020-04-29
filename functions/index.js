@@ -144,3 +144,13 @@ async function deleteDocumentFromAlgolia(snapshot) {
 }
 
 
+// firebase is pretty stupid and we cannot block signup of new user in any way.
+// so let's just disable new accounts and deal with it using database authorization
+// (having predefined user uids that can modify data) and some frontend stuff (to
+// minimise user confusion).
+exports.blockSignup = functions.auth.user().onCreate(event => {
+  return admin.auth()
+    .updateUser(event.uid, {disabled: true})
+    .then(userRecord => console.log(`Auto blocked user: ${userRecord.toJSON()}`))
+    .catch(error => console.log(`Error auto blocking: ${error}`));
+});

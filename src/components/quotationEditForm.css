@@ -1,7 +1,7 @@
 .quotation-edit-form form {
     display: flex;
     flex-flow: column nowrap;
-    font-size: 15px;
+    font-size: 16px;
     align-items:flex-end;
 
     width: 100%;

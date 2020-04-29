@@ -6,11 +6,15 @@ import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, InfiniteHits, Configure } from 'react-instantsearch-dom';
 import { connectStateResults } from 'react-instantsearch/connectors';
 
+import Firebase, { FirebaseContext } from './components/firebase';
+
+
+
 import CogitatorComponent from './components/cogitator.js';
 import QuotationComponent from './components/quotation.js';
+import ModLogin from './components/modLogin.js';
 
 
-import Firebase, { FirebaseContext } from './components/firebase';
 
 
 const searchClient = algoliasearch(
@@ -27,19 +31,16 @@ const Results = connectStateResults(
 );
 
 
+
 ReactDOM.render(
   <React.StrictMode>
     <FirebaseContext.Provider value={new Firebase()}>
       <div id="page-container">
-        {/* <nav>
-          <a href="#home">Home</a>
-          <a href="#contact">Contact</a>
-        </nav> */}
 
         <img class="mobile-hide" id="skull" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/11027763/1b71819403d5c8c398f62e6d888703853ec24cd2.png" />
 
         <article id="content-wrap">
-          {/*          <FirebaseContext.Consumer>
+                   {/* <FirebaseContext.Consumer>
               {firebase => <QuotationsComponent firebase={firebase} />}
           </FirebaseContext.Consumer> */}
 
@@ -53,13 +54,16 @@ ReactDOM.render(
             />
             <CogitatorComponent />
             <Results>
-              <InfiniteHits hitComponent={QuotationComponent} />
+              {/* <FirebaseContext.Consumer> */}
+                <InfiniteHits hitComponent={QuotationComponent} />
+              {/* </FirebaseContext.Consumer> */}
             </Results>
           </InstantSearch>
 
         </article>
         <footer>
             © 2020 Michał Kostrzewa
+            <ModLogin />
         </footer>
       </div>
     </FirebaseContext.Provider>

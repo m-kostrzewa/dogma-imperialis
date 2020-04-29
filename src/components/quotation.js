@@ -13,7 +13,7 @@ class QuotationComponent extends React.Component {
     let charIdx = fullText.length;
     if (fullText.length > 200) {
       charIdx = 200;
-      while (fullText[charIdx] != ' ' && charIdx <= fullText.length) {
+      while (fullText[charIdx] !== ' ' && charIdx <= fullText.length) {
         charIdx += 1;
       }
     }
@@ -54,7 +54,6 @@ class QuotationComponent extends React.Component {
   }
 
   componentDidUpdate() {
-      console.log('update', this.state.quotation.text)
     this.wrapperRef.current.style.height = `${this.sectionRef.current.clientHeight}px`;
   }
 

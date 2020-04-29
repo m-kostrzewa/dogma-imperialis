@@ -47,7 +47,7 @@ class CogitatorComponent extends React.Component {
       <div className="cogitator">
         <div className="cogitator-top-row">
           <DebouncedSearchBox />
-          <input className="button-add-new" type="button" value="Submit new" onClick={this.onClick} />
+          <input className="button-add-new" type="button" value="new..." onClick={this.onClick} />
         </div>
 
         <div className="submit-form-wrapper" ref={this.wrapperRef}>
