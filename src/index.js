@@ -40,11 +40,6 @@ ReactDOM.render(
         <img class="mobile-hide" id="skull" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/11027763/1b71819403d5c8c398f62e6d888703853ec24cd2.png" />
 
         <article id="content-wrap">
-                   {/* <FirebaseContext.Consumer>
-              {firebase => <QuotationsComponent firebase={firebase} />}
-          </FirebaseContext.Consumer> */}
-
-
           <InstantSearch
             indexName="prod_QUOTES"
             searchClient={searchClient}

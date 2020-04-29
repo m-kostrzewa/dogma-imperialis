@@ -21,11 +21,12 @@ class Firebase {
     this.authProvider = new firebase.auth.GoogleAuthProvider();
     this.authProvider.addScope('https://www.googleapis.com/auth/datastore');
 
+    this.currentUser = null;
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log(' user is ', firebase.auth().currentUser);
+        this.currentUser = user;
       } else {
-        console.log(' no user ', firebase.auth().currentUser);
+        this.currentUser = null;
       }
       if (this.onSignCallback) {
         this.onSignCallback(user);

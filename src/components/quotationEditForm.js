@@ -2,10 +2,15 @@ import React from 'react';
 
 import axios from 'axios';
 
+import {FirebaseContext} from './firebase';
+
 import './quotationEditForm.css';
 
 
 class QuotationComponent extends React.Component {
+    static contextType = FirebaseContext;
+
+
   constructor(props) {
     super(props);
 
@@ -20,11 +25,12 @@ class QuotationComponent extends React.Component {
       formData.contact_email = '';
       formData.additional_notes = '';
       formData.want_credit_nickname = '';
+      formData.isDirectDBEdit = true;
+      formData.isDelete = false;
     }
 
 
     this.state = {
-      showEditForm: false,
       doneCallback: props.doneCallback,
       formData,
       submitStatusText: '',
@@ -36,16 +42,52 @@ class QuotationComponent extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
 
-    this.setState({
-      submitStatusText: 'Sending, please wait...',
-    });
+    if(this.state.formData.isDirectDBEdit) {
 
-    axios.post('https://us-central1-dogma-imperialis.cloudfunctions.net/contactFormSubmit', this.state.formData).catch((error) => {
-      console.log(error);
-    }).then((response) => {
+      let t = this.state.formData;
+
+      let docRef = t.objectID ? this.context.db.collection("quotes").doc(t.objectID) : this.context.db.collection("quotes").doc();
+
+      docRef.get().then((doc) => {
+        console.log("Before: ", doc.data());
+      }).catch((error) => {
+        console.log("Failed to get document: ", error)
+      });
+
+      if(t.isDelete && t.text === "delete") {
+        docRef.delete().then(() => {
+          console.log("Object deleted; id = ", t.objectID);
+        }).catch((error) => {
+          console.error("Failed to remove document: ", error);
+        })
+        return;
+      }
+
+      var new_tags = t.new_tags_str.split(",");
+
+      var setWithMerge = docRef.set({
+          text: t.new_text,
+          lore_source: t.new_lore_source,
+          real_source: t.new_real_source,
+          found_on: t.new_credit,
+          tags: new_tags
+      }, { merge: true }).then(() => {
+        docRef.get().then((doc) => {console.log("After: ", doc.data());});
+        window.location.reload();
+      }).catch((error) => {
+        console.error("Failed to modify document: ", error);
+      })
+
+    } else {
       this.setState({
+        submitStatusText: 'Sending, please wait...',
+      });
+
+      axios.post('https://us-central1-dogma-imperialis.cloudfunctions.net/contactFormSubmit', this.state.formData).catch((error) => {
+          console.log(error);
+      }).then((response) => {
+        this.setState({
         submitStatusText: 'Form sent, thanks!',
       });
       setTimeout(() => {
@@ -54,15 +96,18 @@ class QuotationComponent extends React.Component {
           submitStatusText: '',
         });
       }, 3000);
-
-      console.log(response.status);
-      console.log(response.data);
     });
+    }
   }
 
   onChange(event) {
     const { target } = event;
-    const { value } = target;
+    var { value } = target;
+
+    if(target.name == "isDirectDBEdit") {
+      value = target.checked;
+    }
+
     this.setState((prev) => ({
       formData: {
         ...prev.formData,
@@ -185,6 +230,32 @@ class QuotationComponent extends React.Component {
           </div>
 
           <div className="quotation-edit-form-lower-div">
+
+            {this.context.currentUser &&
+              <ul>
+                <li>
+                <label>
+                  Mod only - edit directly in DB
+                  <input
+                      type="checkbox"
+                      name="isDirectDBEdit"
+                      checked={this.state.formData.isDirectDBEdit}
+                      onChange={this.onChange} />
+                  </label>
+                </li>
+                <li>
+                  <label>
+                  Mod only - delete quote (must also set text to 'delete')
+                  <input
+                      type="checkbox"
+                      name="isDelete"
+                      checked={this.state.formData.isDelete}
+                      onChange={this.onChange} />
+                  </label>
+                </li>
+              </ul>
+            }
+
             <span>
               A moderator will review and may adjust your submission before adding it to database.
               The process may take a few days. Thank you for your patience and for improving Dogma Imperialis.
