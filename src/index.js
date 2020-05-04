@@ -37,7 +37,7 @@ ReactDOM.render(
     <FirebaseContext.Provider value={new Firebase()}>
       <div id="page-container">
 
-        <img class="mobile-hide" id="skull" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/11027763/1b71819403d5c8c398f62e6d888703853ec24cd2.png" />
+      <img class="mobile-hide" id="skull" src="czacha.png" />
 
         <article id="content-wrap">
           <InstantSearch
