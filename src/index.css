@@ -28,11 +28,13 @@ body {
 footer {
     margin: auto;
     margin-bottom: 0px;
-    margin-top: 30px;
+    margin-top: 90px;
     justify-self: end;
     font-size: 10px;
     color: antiquewhite;
     font-family: 'Cinzel';
+    text-align: center;
+
 
 }
 footer a {

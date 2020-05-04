@@ -58,6 +58,7 @@ ReactDOM.render(
         </article>
         <footer>
             © 2020 Michał Kostrzewa
+            <br/>contact: dogma dash imperialis at michal dash kostrzewa dot com
             <ModLogin />
         </footer>
       </div>
