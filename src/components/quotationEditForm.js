@@ -25,7 +25,7 @@ class QuotationComponent extends React.Component {
       formData.contact_email = '';
       formData.additional_notes = '';
       formData.want_credit_nickname = '';
-      formData.isDirectDBEdit = true;
+      formData.isDirectDBEdit = false;
       formData.isDelete = false;
     }
 
@@ -74,7 +74,7 @@ class QuotationComponent extends React.Component {
           tags: new_tags
       }, { merge: true }).then(() => {
         docRef.get().then((doc) => {console.log("After: ", doc.data());});
-        window.location.reload();
+        // window.location.reload();
       }).catch((error) => {
         console.error("Failed to modify document: ", error);
       })
