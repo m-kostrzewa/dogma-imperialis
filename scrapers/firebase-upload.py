@@ -14,31 +14,31 @@ db = firestore.client()
 
 quotes_col_ref = db.collection(u'quotes')
 
-# print("Deleting previous")
-# read_quotes = quotes_col_ref.stream()
-# for read_quote in read_quotes:
-#     read_quote.reference.delete()
+# # print("Deleting previous")
+# # read_quotes = quotes_col_ref.stream()
+# # for read_quote in read_quotes:
+# #     read_quote.reference.delete()
 
 
-for filepath in glob.glob('data/*.txt'):
-    print(f"Uploading from {filepath}")
+# for filepath in glob.glob('data/*.txt'):
+#     print(f"Uploading from {filepath}")
 
-    with open(filepath, "r") as input_file:
-        quotes = json.load(input_file)
+#     with open(filepath, "r") as input_file:
+#         quotes = json.load(input_file)
 
-        # for test
-        # random.shuffle(quotes)
-        for i, quote in enumerate(quotes):
-            if i % 50 == 0:
-                print(f"{i / len(quotes)}")
-            quotes_col_ref.add(quote)
+#         # for test
+#         # random.shuffle(quotes)
+#         for i, quote in enumerate(quotes):
+#             if i % 50 == 0:
+#                 print(f"{i / len(quotes)}")
+#             quotes_col_ref.add(quote)
 
     # read_quotes = quotes_col_ref.stream()
     # for read_quote in read_quotes:
     #     print(f'{read_quote.id} => {read_quote.to_dict()}')
         # read_quote.reference.delete()
 
-# mind_related = quotes_col_ref.where()
-# for mr in mrs:
-#     print(f'{mr.id} => {mr.to_dict()}')
+mrs = quotes_col_ref.stream()
+for mr in mrs:
+    print(f'{mr.id} => {mr.to_dict()}')
 

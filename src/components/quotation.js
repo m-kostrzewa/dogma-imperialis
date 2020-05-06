@@ -27,6 +27,7 @@ class QuotationComponent extends React.Component {
     this.defaultTextToShow = this.defaultTextToShow.bind(this);
     this.expandedTextToShow = this.expandedTextToShow.bind(this);
     this.formDoneCallback = this.formDoneCallback.bind(this);
+    this.formatNewlines = this.formatNewlines.bind(this);
 
     this.wrapperRef = React.createRef();
     this.sectionRef = React.createRef();
@@ -141,6 +142,19 @@ class QuotationComponent extends React.Component {
     }));
   }
 
+  formatNewlines(text) {
+    let splitted = text.split('\n');
+    let newText = splitted.map((item, i) => {
+        if (splitted.length - 1 === i) {
+          // last item - no newline please.
+          return <span>{item}</span>;
+        } else {
+          return <span>{item}<br/></span>;
+        }
+    });
+    return newText;
+  }
+
   render() {
     let text;
     let details;
@@ -151,6 +165,8 @@ class QuotationComponent extends React.Component {
       text = this.defaultTextToShow();
       details = '';
     }
+
+    text = this.formatNewlines(text);
 
     return (
       <div className="quotation-wrapper" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.onClick} ref={this.wrapperRef}>

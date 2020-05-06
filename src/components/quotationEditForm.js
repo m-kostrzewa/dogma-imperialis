@@ -21,7 +21,7 @@ class QuotationComponent extends React.Component {
       formData.new_lore_source = props.quotation.lore_source;
       formData.new_real_source = props.quotation.real_source;
       formData.new_credit = props.quotation.found_on;
-      formData.new_tags_str = props.quotation.tags.join('; ');
+      formData.new_tags_str = props.quotation.tags.join(', ');
       formData.contact_email = '';
       formData.additional_notes = '';
       formData.want_credit_nickname = '';
