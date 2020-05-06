@@ -20,6 +20,7 @@ quotes_col_ref = db.collection(u'quotes')
 # #     read_quote.reference.delete()
 
 
+
 # for filepath in glob.glob('data/*.txt'):
 #     print(f"Uploading from {filepath}")
 
@@ -38,7 +39,21 @@ quotes_col_ref = db.collection(u'quotes')
     #     print(f'{read_quote.id} => {read_quote.to_dict()}')
         # read_quote.reference.delete()
 
+# mrs = quotes_col_ref.where("tags", "array_contains", "Cult Mechanicus; Skitarii; Adeptus Mechanicus").stream()
 mrs = quotes_col_ref.stream()
 for mr in mrs:
     print(f'{mr.id} => {mr.to_dict()}')
+#     newtags = mr.to_dict()["tags"][0].split("; ")
+#     print(newtags)
+#     db.collection("quotes").document(mr.id).update({
+#       "tags": newtags
+#     })
 
+# db.collection("quotes").document("vTuMVSvNrmXwlyiOay22").update({
+#       "tags": ["30k", "Imperium of Man"]
+#     })
+
+# washingtonRef.update({
+#     capital: true
+# })
+# .
