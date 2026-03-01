@@ -1,17 +1,21 @@
 import React from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
 
 import DebouncedSearchBox from './debouncedSearch.jsx';
 import DebouncedRefinementList from './debouncedRefListSearch.jsx';
+import { FirebaseContext } from './firebase';
 
 import './cogitator.css';
 import QuotationEditForm from './quotationEditForm.jsx';
 
 
 class CogitatorComponent extends React.Component {
+  static contextType = FirebaseContext;
   constructor(props) {
     super(props);
     this.state = {
       showSubmitForm: false,
+      isLoggedIn: false,
     };
 
     this.onClick = this.onClick.bind(this);
@@ -38,6 +42,13 @@ class CogitatorComponent extends React.Component {
   componentDidMount() {
     // initially it's undefined so the first transition is broken.. so force set it to 0px.
     this.wrapperRef.current.style.height = '0px';
+    this.unsubAuth = onAuthStateChanged(this.context.auth, (user) => {
+      this.setState({ isLoggedIn: !!user });
+    });
+  }
+
+  componentWillUnmount() {
+    if (this.unsubAuth) this.unsubAuth();
   }
 
   render() {
@@ -45,7 +56,9 @@ class CogitatorComponent extends React.Component {
       <div className="cogitator">
         <div className="cogitator-top-row">
           <DebouncedSearchBox />
-          <input className="button-add-new" type="button" value="new..." onClick={this.onClick} />
+          {this.state.isLoggedIn && (
+            <input className="button-add-new" type="button" value="new..." onClick={this.onClick} />
+          )}
         </div>
 
         <div className="submit-form-wrapper" ref={this.wrapperRef}>
