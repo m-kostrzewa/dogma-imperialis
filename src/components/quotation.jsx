@@ -13,11 +13,34 @@ class QuotationComponent extends React.Component {
 
     this.onFormClick = this.onFormClick.bind(this);
     this.formDoneCallback = this.formDoneCallback.bind(this);
+    this.onMouseEnter = this.onMouseEnter.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
+
+    this.clippedRef = React.createRef();
+    this.detailsRef = React.createRef();
 
     this.state = {
       quotation: props.hit,
       showEditForm: false,
     };
+  }
+
+  onMouseEnter() {
+    if (this.clippedRef.current) {
+      this.clippedRef.current.style.maxHeight = this.clippedRef.current.scrollHeight + 'px';
+    }
+    if (this.detailsRef.current) {
+      this.detailsRef.current.style.maxHeight = this.detailsRef.current.scrollHeight + 'px';
+    }
+  }
+
+  onMouseLeave() {
+    if (this.clippedRef.current) {
+      this.clippedRef.current.style.maxHeight = '';
+    }
+    if (this.detailsRef.current) {
+      this.detailsRef.current.style.maxHeight = '';
+    }
   }
 
   onFormClick(event) {
@@ -27,6 +50,14 @@ class QuotationComponent extends React.Component {
 
   formDoneCallback() {
     this.setState({ showEditForm: false });
+  }
+
+  componentDidMount() {
+    // If the content fits within max-height, hide the fade overlay
+    const el = this.clippedRef.current;
+    if (el && el.scrollHeight <= el.clientHeight) {
+      el.classList.add('no-clip');
+    }
   }
 
   formatNewlines(text) {
@@ -41,7 +72,7 @@ class QuotationComponent extends React.Component {
   generateDetailsSection() {
     const tags = this.state.quotation.tags.map((x, i) => <li key={i} className="tag">{x}</li>);
     return (
-      <div className="quote-details">
+      <div className="quote-details" ref={this.detailsRef}>
         <span>Realspace source:</span>
         <cite>
           <span dangerouslySetInnerHTML={{ __html: this.state.quotation.real_source }} />
@@ -63,9 +94,11 @@ class QuotationComponent extends React.Component {
     const text = this.formatNewlines(quotation.text);
 
     return (
-      <div className="quotation-wrapper">
+      <div className="quotation-wrapper" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
         <section className="quotation">
-          <q>{text}</q>
+          <div className="quotation-clipped" ref={this.clippedRef}>
+            <q>{text}</q>
+          </div>
           <cite><div dangerouslySetInnerHTML={{ __html: quotation.lore_source }} /></cite>
           {this.generateDetailsSection()}
 
