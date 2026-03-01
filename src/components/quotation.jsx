@@ -1,10 +1,13 @@
 import React from 'react';
 import './quotation.css';
 
+import {FirebaseContext} from './firebase';
 import QuotationEditForm from './quotationEditForm.jsx';
 
 
 class QuotationComponent extends React.Component {
+  static contextType = FirebaseContext;
+
   constructor(props) {
     super(props);
 
@@ -177,7 +180,7 @@ class QuotationComponent extends React.Component {
           <cite><div dangerouslySetInnerHTML={{ __html: this.state.quotation.lore_source }} /></cite>
           {details}
 
-          {this.state.displayEverything ? <input type="button" className="button-small" onClick={this.onFormClick} value="Correction" /> : '' }
+          {this.state.displayEverything && this.context.currentUser ? <input type="button" className="button-small" onClick={this.onFormClick} value="Correction" /> : '' }
 
           {this.state.showEditForm ? <QuotationEditForm quotation={this.state.quotation} doneCallback={this.formDoneCallback} /> : ''}
         </section>

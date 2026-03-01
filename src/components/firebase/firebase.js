@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithRedirect, signOut as firebaseSignOut } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut as firebaseSignOut } from 'firebase/auth';
 
 const config = {
   apiKey: 'AIzaSyAHXoy1DgjukC9DjN3JKdV6Nns3Lui5hqA',
@@ -39,7 +39,7 @@ class Firebase {
   }
 
   signIn() {
-    signInWithRedirect(this.auth, this.authProvider);
+    signInWithPopup(this.auth, this.authProvider);
   }
 
   signOut() {

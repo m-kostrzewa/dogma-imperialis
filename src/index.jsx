@@ -47,7 +47,7 @@ root.render(
 
         <footer>
           &copy; 2026 Michał Kostrzewa
-          <br />contact: dogma dash imperialis at michal dash kostrzewa dot com
+          <br />contact: contact at michal dash kostrzewa dot com
           <ModLogin />
         </footer>
       </div>

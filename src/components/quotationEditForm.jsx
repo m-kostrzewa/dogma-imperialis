@@ -79,16 +79,6 @@ class QuotationComponent extends React.Component {
         console.error("Failed to modify document: ", error);
       })
 
-    } else {
-      this.setState({
-        submitStatusText: 'Suggestion feature is temporarily unavailable. Please try again later.',
-      });
-      setTimeout(() => {
-        this.state.doneCallback();
-        this.setState({
-          submitStatusText: '',
-        });
-      }, 3000);
     }
   }
 
@@ -184,74 +174,31 @@ class QuotationComponent extends React.Component {
             />
           </div>
 
-          <div className="form-row">
-            <p className="quotation-edit-from-label">Contact email: </p>
-            <input
-              required
-              className="quotation-edit-form-field"
-              name="contact_email"
-              type="email"
-              placeholder="This email will be used in case moderator has any questions"
-              value={this.state.formData.contact_email}
-              onChange={this.onChange}
-            />
-          </div>
-
-          <div className="form-row">
-            <p className="quotation-edit-from-label">Notes: </p>
-            <textarea
-              className="quotation-edit-form-field"
-              name="additional_notes"
-              rows="2"
-              placeholder="(Optional) additional notes for moderator"
-              value={this.state.formData.additional_notes}
-              onChange={this.onChange}
-            />
-          </div>
-
-          <div className="form-row">
-            <p className="quotation-edit-from-label">Nickname: </p>
-            <textarea
-              className="quotation-edit-form-field"
-              name="want_credit_nickname"
-              rows="1"
-              placeholder="(Optional) your nickname for credit"
-              value={this.state.formData.want_credit_nickname}
-              onChange={this.onChange}
-            />
-          </div>
-
           <div className="quotation-edit-form-lower-div">
 
-            {this.context.currentUser &&
-              <ul>
-                <li>
+            <ul>
+              <li>
+              <label>
+                Edit directly in DB
+                <input
+                    type="checkbox"
+                    name="isDirectDBEdit"
+                    checked={this.state.formData.isDirectDBEdit}
+                    onChange={this.onChange} />
+                </label>
+              </li>
+              <li>
                 <label>
-                  Mod only - edit directly in DB
-                  <input
-                      type="checkbox"
-                      name="isDirectDBEdit"
-                      checked={this.state.formData.isDirectDBEdit}
-                      onChange={this.onChange} />
-                  </label>
-                </li>
-                <li>
-                  <label>
-                  Mod only - delete quote (must also set text to 'delete')
-                  <input
-                      type="checkbox"
-                      name="isDelete"
-                      checked={this.state.formData.isDelete}
-                      onChange={this.onChange} />
-                  </label>
-                </li>
-              </ul>
-            }
+                Delete quote (must also set text to 'delete')
+                <input
+                    type="checkbox"
+                    name="isDelete"
+                    checked={this.state.formData.isDelete}
+                    onChange={this.onChange} />
+                </label>
+              </li>
+            </ul>
 
-            <span>
-              A moderator will review and may adjust your submission before adding it to database.
-              The process may take a few days. Thank you for your patience and for improving Dogma Imperialis.
-            </span>
             <input className="button-small" type="submit" title="Submit" />
           </div>
         </form>
