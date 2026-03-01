@@ -11,10 +11,34 @@ import CogitatorComponent from './components/cogitator.jsx';
 import QuotationComponent from './components/quotation.jsx';
 import ModLogin from './components/modLogin.jsx';
 
-const searchClient = algoliasearch(
+const algoliaClient = algoliasearch(
   import.meta.env.VITE_ALGOLIA_APP_ID,
   import.meta.env.VITE_ALGOLIA_SEARCH_KEY,
 );
+
+const ESTIMATED_TOTAL_HITS = 800;
+const randomOffset = Math.floor(Math.random() * ESTIMATED_TOTAL_HITS);
+
+const searchClient = {
+  ...algoliaClient,
+  search(requests, ...rest) {
+    const modified = requests.map((req) => {
+      const isEmptyQuery = !req.params?.query && !req.params?.facetFilters?.length;
+      if (isEmptyQuery && (req.params?.page === 0 || req.params?.page === undefined)) {
+        return {
+          ...req,
+          params: {
+            ...req.params,
+            offset: randomOffset + (req.params?.page || 0) * (req.params?.hitsPerPage || 10),
+            length: req.params?.hitsPerPage || 10,
+          },
+        };
+      }
+      return req;
+    });
+    return algoliaClient.search(modified, ...rest);
+  },
+};
 
 function NoResultsBoundary({ children }) {
   const { results } = useInstantSearch();
