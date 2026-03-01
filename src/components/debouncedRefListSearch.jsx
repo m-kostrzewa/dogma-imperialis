@@ -1,23 +1,12 @@
-import React, { useMemo } from 'react';
-import debounce from 'debounce';
+import React from 'react';
 import { useRefinementList } from 'react-instantsearch';
 
-// Debounce search, similarly to normal searchbox.
-// https://www.algolia.com/doc/api-reference/widgets/refinement-list/react/#connector-param-provided-isfromsearch
-function DebouncedRefinementList({ attribute, searchable }) {
-  const { items, refine, searchForItems, isFromSearch } = useRefinementList({
+function DebouncedRefinementList({ attribute }) {
+  const { items, refine } = useRefinementList({
     attribute,
-    searchable,
+    sortBy: ['name:asc'],
+    limit: 1000,
   });
-
-  const debouncedSearch = useMemo(
-    () => debounce((value) => searchForItems(value), 500),
-    [searchForItems]
-  );
-
-  const onChange = (e) => {
-    debouncedSearch(e.target.value);
-  };
 
   return (
     <div>
@@ -32,25 +21,11 @@ function DebouncedRefinementList({ attribute, searchable }) {
                   refine(item.value);
                 }}
               >
-                {isFromSearch ? (
-                  <span dangerouslySetInnerHTML={{ __html: item.highlighted }} />
-                ) : (
-                  item.label
-                )}
-                {' '}
-                ({item.count})
+                {item.label} ({item.count})
               </a>
             </span>
           </li>
         ))}
-        <li>
-          <input
-            type="search"
-            placeholder="tag..."
-            id="tagRefineSearch"
-            onChange={onChange}
-          />
-        </li>
       </ul>
     </div>
   );

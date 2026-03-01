@@ -54,7 +54,7 @@ class CogitatorComponent extends React.Component {
           </section>
         </div>
 
-        <DebouncedRefinementList attribute="tags" searchable />
+        <DebouncedRefinementList attribute="tags" />
       </div>
     );
   }
