@@ -1,12 +1,10 @@
 import React from 'react';
 
-import { RefinementList } from 'react-instantsearch-dom';
-
-import DebouncedSearchBox from './debouncedSearch';
-import DebouncedRefinementList from './debouncedRefListSearch';
+import DebouncedSearchBox from './debouncedSearch.jsx';
+import DebouncedRefinementList from './debouncedRefListSearch.jsx';
 
 import './cogitator.css';
-import QuotationEditForm from './quotationEditForm.js';
+import QuotationEditForm from './quotationEditForm.jsx';
 
 
 class CogitatorComponent extends React.Component {

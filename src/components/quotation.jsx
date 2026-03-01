@@ -1,7 +1,7 @@
 import React from 'react';
 import './quotation.css';
 
-import QuotationEditForm from './quotationEditForm.js';
+import QuotationEditForm from './quotationEditForm.jsx';
 
 
 class QuotationComponent extends React.Component {

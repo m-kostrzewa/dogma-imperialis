@@ -1,6 +1,6 @@
 import React from 'react';
 
-import axios from 'axios';
+import { doc, collection, getDoc, setDoc, deleteDoc } from 'firebase/firestore';
 
 import {FirebaseContext} from './firebase';
 
@@ -47,16 +47,16 @@ class QuotationComponent extends React.Component {
 
       let t = this.state.formData;
 
-      let docRef = t.objectID ? this.context.db.collection("quotes").doc(t.objectID) : this.context.db.collection("quotes").doc();
+      let docRef = t.objectID ? doc(this.context.db, "quotes", t.objectID) : doc(collection(this.context.db, "quotes"));
 
-      docRef.get().then((doc) => {
-        console.log("Before: ", doc.data());
+      getDoc(docRef).then((docSnap) => {
+        console.log("Before: ", docSnap.data());
       }).catch((error) => {
         console.log("Failed to get document: ", error)
       });
 
       if(t.isDelete && t.text === "delete") {
-        docRef.delete().then(() => {
+        deleteDoc(docRef).then(() => {
           console.log("Object deleted; id = ", t.objectID);
         }).catch((error) => {
           console.error("Failed to remove document: ", error);
@@ -66,14 +66,14 @@ class QuotationComponent extends React.Component {
 
       var new_tags = t.new_tags_str.split(",");
 
-      var setWithMerge = docRef.set({
+      setDoc(docRef, {
           text: t.new_text,
           lore_source: t.new_lore_source,
           real_source: t.new_real_source,
           found_on: t.new_credit,
           tags: new_tags
       }, { merge: true }).then(() => {
-        docRef.get().then((doc) => {console.log("After: ", doc.data());});
+        getDoc(docRef).then((docSnap) => {console.log("After: ", docSnap.data());});
         // window.location.reload();
       }).catch((error) => {
         console.error("Failed to modify document: ", error);
@@ -81,14 +81,7 @@ class QuotationComponent extends React.Component {
 
     } else {
       this.setState({
-        submitStatusText: 'Sending, please wait...',
-      });
-
-      axios.post('https://us-central1-dogma-imperialis.cloudfunctions.net/contactFormSubmit', this.state.formData).catch((error) => {
-          console.log(error);
-      }).then((response) => {
-        this.setState({
-        submitStatusText: 'Form sent, thanks!',
+        submitStatusText: 'Suggestion feature is temporarily unavailable. Please try again later.',
       });
       setTimeout(() => {
         this.state.doneCallback();
@@ -96,7 +89,6 @@ class QuotationComponent extends React.Component {
           submitStatusText: '',
         });
       }, 3000);
-    });
     }
   }
 
@@ -104,7 +96,7 @@ class QuotationComponent extends React.Component {
     const { target } = event;
     var { value } = target;
 
-    if(target.name == "isDirectDBEdit") {
+    if(target.name === "isDirectDBEdit") {
       value = target.checked;
     }
 

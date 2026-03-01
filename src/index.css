@@ -75,9 +75,13 @@ footer a.active {
     animation-iteration-count: infinite;
 }
 
-.ais-InfiniteHits ul {
+.ais-InfiniteHits ul, .ais-InfiniteHits ol, .ais-InfiniteHits-list {
     list-style-type: none;
     padding: 0;
+}
+
+.ais-InfiniteHits-loadPrevious {
+    display: none;
 }
 
 

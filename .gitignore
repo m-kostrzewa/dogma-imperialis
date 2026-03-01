@@ -3,6 +3,12 @@
 .vscode
 .firebase
 
+# Google Cloud service account key
+dogma-imperialis-*.json
+
+# Firebase runtime config backup
+.runtimeconfig-backup.json
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
