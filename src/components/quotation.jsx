@@ -11,96 +11,36 @@ class QuotationComponent extends React.Component {
   constructor(props) {
     super(props);
 
-    const fullText = props.hit.text;
-
-    let charIdx = fullText.length;
-    if (fullText.length > 200) {
-      charIdx = 200;
-      while (fullText[charIdx] !== ' ' && charIdx <= fullText.length) {
-        charIdx += 1;
-      }
-    }
-    const alwaysShowText = fullText.slice(0, charIdx);
-    const expandShowText = fullText.slice(charIdx);
-
-    this.onMouseEnter = this.onMouseEnter.bind(this);
-    this.onMouseLeave = this.onMouseLeave.bind(this);
-    this.onClick = this.onClick.bind(this);
     this.onFormClick = this.onFormClick.bind(this);
-    this.defaultTextToShow = this.defaultTextToShow.bind(this);
-    this.expandedTextToShow = this.expandedTextToShow.bind(this);
     this.formDoneCallback = this.formDoneCallback.bind(this);
-    this.formatNewlines = this.formatNewlines.bind(this);
-
-    this.wrapperRef = React.createRef();
-    this.sectionRef = React.createRef();
-
 
     this.state = {
       quotation: props.hit,
-      alwaysShowText,
-      expandShowText,
-      detailsSection: '',
-      displayEverything: false,
       showEditForm: false,
-      forceUpdate: false,
     };
-
-    this.state.actualText = this.defaultTextToShow();
   }
 
-    componentDidMount() {
-      // initially it's undefined so the first transition is broken.. so force set it to 0px.
-      // ugly hack with on mouse enter but we must see initial text for this to work...
-      this.onMouseEnter();
-      this.wrapperRef.current.style.height = '0px';
-      this.onMouseLeave();
+  onFormClick(event) {
+    event.stopPropagation();
+    this.setState((prev) => ({ showEditForm: !prev.showEditForm }));
   }
 
-  componentDidUpdate() {
-    this.wrapperRef.current.style.height = `${this.sectionRef.current.clientHeight}px`;
+  formDoneCallback() {
+    this.setState({ showEditForm: false });
   }
 
-  onMouseEnter(event) {
-    if (this.state.showEditForm) {
-      return;
-    }
-    this.setState({
-      displayEverything: true,
-    });
+  formatNewlines(text) {
+    const parts = text.split('\n');
+    return parts.map((item, i) =>
+      i < parts.length - 1
+        ? <span key={i}>{item}<br/></span>
+        : <span key={i}>{item}</span>
+    );
   }
-
-  onClick(event) {
-    if (this.state.showEditForm) {
-      return;
-    }
-
-    this.setState((prev) => ({
-      forceDetailsOn: !prev.forceDetailsOn,
-    }));
-  }
-
-  onMouseLeave(event) {
-    if (this.state.showEditForm) {
-      return;
-    }
-
-    if (!this.state.forceDetailsOn) {
-      this.setState({
-        displayEverything: false,
-      });
-    } else {
-      this.setState({
-        displayEverything: true,
-      });
-    }
-  }
-
 
   generateDetailsSection() {
-    const tags = this.state.quotation.tags.map((x) => <li className="tag">{x}</li>);
-
-    const detailsSection = (
+    const tags = this.state.quotation.tags.map((x, i) => <li key={i} className="tag">{x}</li>);
+    return (
       <div className="quote-details">
         <span>Realspace source:</span>
         <cite>
@@ -112,77 +52,30 @@ class QuotationComponent extends React.Component {
         </cite>
         <span>Tags:</span>
         <span>
-          <ul>
-            {tags}
-          </ul>
+          <ul>{tags}</ul>
         </span>
       </div>
     );
-    return detailsSection;
-  }
-
-  defaultTextToShow() {
-    let textToShow = this.state.alwaysShowText;
-    if (this.state.expandShowText.length !== 0) {
-      textToShow += ' (...)';
-    }
-    return textToShow;
-  }
-
-  expandedTextToShow() {
-    return this.state.alwaysShowText + this.state.expandShowText;
-  }
-
-  onFormClick(event) {
-    this.setState((prev) => ({
-      showEditForm: !prev.showEditForm,
-    }));
-  }
-
-  formDoneCallback() {
-    this.setState((prev) => ({
-      showEditForm: false,
-    }));
-  }
-
-  formatNewlines(text) {
-    let splitted = text.split('\n');
-    let newText = splitted.map((item, i) => {
-        if (splitted.length - 1 === i) {
-          // last item - no newline please.
-          return <span>{item}</span>;
-        } else {
-          return <span>{item}<br/></span>;
-        }
-    });
-    return newText;
   }
 
   render() {
-    let text;
-    let details;
-    if (this.state.displayEverything) {
-      text = this.expandedTextToShow();
-      details = this.generateDetailsSection();
-    } else {
-      text = this.defaultTextToShow();
-      details = '';
-    }
-
-    text = this.formatNewlines(text);
+    const { quotation, showEditForm } = this.state;
+    const text = this.formatNewlines(quotation.text);
 
     return (
-      <div className="quotation-wrapper" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.onClick} ref={this.wrapperRef}>
-        <section ref={this.sectionRef} className="quotation">
-          <q>
-            {text}
-          </q>
-          <cite><div dangerouslySetInnerHTML={{ __html: this.state.quotation.lore_source }} /></cite>
-          {details}
+      <div className="quotation-wrapper">
+        <section className="quotation">
+          <q>{text}</q>
+          <cite><div dangerouslySetInnerHTML={{ __html: quotation.lore_source }} /></cite>
+          {this.generateDetailsSection()}
 
-          {this.state.displayEverything && this.context.currentUser ? <input type="button" className="button-small" onClick={this.onFormClick} value="Correction" /> : '' }
+          {this.context.currentUser
+            ? <input type="button" className="button-small" onClick={this.onFormClick} value="Correction" />
+            : ''}
 
-          {this.state.showEditForm ? <QuotationEditForm quotation={this.state.quotation} doneCallback={this.formDoneCallback} /> : ''}
+          {showEditForm
+            ? <QuotationEditForm quotation={quotation} doneCallback={this.formDoneCallback} />
+            : ''}
         </section>
       </div>
     );

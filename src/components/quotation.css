@@ -1,8 +1,5 @@
 
 .quotation-wrapper {
-    transition: height 0.5s;
-    overflow: hidden;
-
     margin: auto;
     margin-top: 60px;
     margin-bottom: 20px;
