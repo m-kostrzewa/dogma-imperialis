@@ -26,16 +26,21 @@ body {
 
 
 footer {
-    margin: auto;
-    margin-bottom: 0px;
-    margin-top: 90px;
-    justify-self: end;
+    position: fixed;
+    right: 8px;
+    bottom: 30px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
     font-size: 10px;
     color: antiquewhite;
     font-family: 'Cinzel';
     text-align: center;
-
-
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+footer:hover {
+    opacity: 1;
 }
 footer a {
     color: rgba(var(--text-color), 0.8);
@@ -117,5 +122,13 @@ footer a.active {
     /* hide on mobile */
    .mobile-hide {
       display: none !important;
+   }
+   footer {
+      position: static;
+      writing-mode: horizontal-tb;
+      text-orientation: initial;
+      text-align: center;
+      margin: 40px auto 10px;
+      opacity: 1;
    }
 }

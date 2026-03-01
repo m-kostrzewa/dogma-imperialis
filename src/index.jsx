@@ -102,7 +102,7 @@ root.render(
 
         <footer>
           &copy; 2026 Michał Kostrzewa
-          <br />contact: contact at michal dash kostrzewa dot com
+          <span className="footer-sep"> · </span>
           <ModLogin />
         </footer>
       </div>
