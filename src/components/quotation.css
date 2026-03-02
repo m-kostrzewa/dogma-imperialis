@@ -83,6 +83,17 @@
 }
 
 
+.semantic-badge {
+    font-family: 'Cinzel';
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: #b89d65;
+    opacity: 0.7;
+    margin-top: 6px;
+    text-align: right;
+    margin-right: 20px;
+}
+
 .quote-details {
     display: flex;
     flex-flow: row wrap;

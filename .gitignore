@@ -35,3 +35,6 @@ yarn-error.log*
 
 scrapers/.venv/**
 scrapers/html/**
+
+# Feature specs (internal)
+specs/

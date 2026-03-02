@@ -100,6 +100,7 @@ class QuotationComponent extends React.Component {
             <q>{text}</q>
           </div>
           <cite><div dangerouslySetInnerHTML={{ __html: quotation.lore_source }} /></cite>
+          {quotation._semantic && <div className="semantic-badge">matched by meaning</div>}
           {this.generateDetailsSection()}
 
           {this.context.currentUser

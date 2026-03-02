@@ -1,7 +1,7 @@
 // https://medium.com/@soares.rfarias/how-to-set-up-firestore-and-algolia-319fcf2c0d37
 
 const { initializeApp } = require("firebase-admin/app");
-const { getFirestore } = require("firebase-admin/firestore");
+const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { onRequest } = require("firebase-functions/v2/https");
 const {
     onDocumentCreated,
@@ -9,11 +9,62 @@ const {
     onDocumentDeleted,
 } = require("firebase-functions/v2/firestore");
 const { algoliasearch } = require("algoliasearch");
+const { GoogleAuth } = require("google-auth-library");
 
 initializeApp();
 const db = getFirestore();
 
 const ALGOLIA_INDEX = "prod_QUOTES";
+
+// --- Vertex AI Embedding config ---
+const PROJECT_ID = "dogma-imperialis";
+const REGION = "europe-west3";
+const EMBEDDING_MODEL = "text-embedding-004";
+const EMBEDDING_DIM = 768;
+const VERTEX_EMBED_URL =
+    `https://${REGION}-aiplatform.googleapis.com/v1/` +
+    `projects/${PROJECT_ID}/locations/${REGION}/` +
+    `publishers/google/models/${EMBEDDING_MODEL}:predict`;
+
+let _auth = null;
+function getAuth() {
+    if (!_auth) {
+        _auth = new GoogleAuth({
+            scopes: ["https://www.googleapis.com/auth/cloud-platform"],
+        });
+    }
+    return _auth;
+}
+
+/**
+ * Compute a 768-dim embedding for the given text via Vertex AI.
+ * Returns a float array, or null on failure.
+ */
+async function computeEmbedding(text) {
+    if (!text) return null;
+    const client = await getAuth().getClient();
+    const token = await client.getAccessToken();
+
+    const response = await fetch(VERTEX_EMBED_URL, {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${token.token}`,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            instances: [{ content: text }],
+            parameters: { outputDimensionality: EMBEDDING_DIM },
+        }),
+    });
+
+    if (!response.ok) {
+        console.error("Embedding API error:", response.status, await response.text());
+        return null;
+    }
+
+    const data = await response.json();
+    return data.predictions?.[0]?.embeddings?.values ?? null;
+}
 
 let _algoliaClient = null;
 function getAlgoliaClient() {
@@ -66,6 +117,16 @@ exports.collectionOnCreate = onDocumentCreated(
     async (event) => {
         const snapshot = event.data;
         await saveDocumentInAlgolia(snapshot);
+        // Compute and store embedding
+        const text = snapshot.data()?.text;
+        if (text) {
+            const vector = await computeEmbedding(text);
+            if (vector) {
+                await snapshot.ref.update({
+                    embedding: FieldValue.vector(vector),
+                });
+            }
+        }
     }
 );
 
@@ -74,6 +135,18 @@ exports.collectionOnUpdate = onDocumentUpdated(
     async (event) => {
         const after = event.data.after;
         await saveDocumentInAlgolia(after);
+        // Recompute embedding if text changed
+        const before = event.data.before;
+        const newText = after.data()?.text;
+        const oldText = before.data()?.text;
+        if (newText && newText !== oldText) {
+            const vector = await computeEmbedding(newText);
+            if (vector) {
+                await after.ref.update({
+                    embedding: FieldValue.vector(vector),
+                });
+            }
+        }
     }
 );
 
@@ -112,3 +185,68 @@ async function deleteDocumentFromAlgolia(snapshot) {
         });
     }
 }
+
+// --- Semantic Search Cloud Function ---
+
+const ALLOWED_ORIGINS = [
+    "https://dogma-imperialis.com",
+    "https://www.dogma-imperialis.com",
+    "http://localhost:5173", // Vite dev server
+];
+
+exports.semanticSearch = onRequest(
+    { region: REGION, cors: ALLOWED_ORIGINS },
+    async (req, res) => {
+        if (req.method !== "POST") {
+            res.status(405).json({ error: "Method not allowed" });
+            return;
+        }
+
+        const { query, limit = 20 } = req.body || {};
+
+        if (!query || typeof query !== "string" || query.trim().length === 0) {
+            res.status(400).json({ error: "Missing or empty 'query' string" });
+            return;
+        }
+
+        const clampedLimit = Math.max(1, Math.min(50, Number(limit) || 20));
+
+        try {
+            // 1. Embed the query
+            const vector = await computeEmbedding(query.trim());
+            if (!vector) {
+                res.status(500).json({ error: "Failed to compute embedding" });
+                return;
+            }
+
+            // 2. Firestore vector search (cosine distance ≤ 0.35 ≈ similarity ≥ 0.65)
+            const snapshot = await db.collection("quotes")
+                .findNearest({
+                    vectorField: "embedding",
+                    queryVector: vector,
+                    limit: clampedLimit,
+                    distanceMeasure: "COSINE",
+                    distanceThreshold: 0.35,
+                })
+                .get();
+
+            // 3. Map to Algolia-compatible hit shape
+            const hits = snapshot.docs.map((doc) => {
+                const d = doc.data();
+                return {
+                    objectID: doc.id,
+                    text: d.text || "",
+                    lore_source: d.lore_source || "",
+                    real_source: d.real_source || "",
+                    tags: d.tags || [],
+                    found_on: d.found_on || "",
+                };
+            });
+
+            res.status(200).json({ hits });
+        } catch (err) {
+            console.error("semanticSearch error:", err);
+            res.status(500).json({ error: "Internal server error" });
+        }
+    }
+);
