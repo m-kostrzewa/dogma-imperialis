@@ -213,7 +213,7 @@ footer a.active {
 }
 @media screen and (max-width: 600px) {
     .hero-section {
-        min-height: 80vh;
+        min-height: 70vh;
         padding: 30px 12px 0;
     }
 }

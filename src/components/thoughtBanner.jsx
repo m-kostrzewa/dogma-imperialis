@@ -6,6 +6,10 @@ import './thoughtBanner.css';
 
 const TRIGGER_URL = 'https://europe-west3-dogma-imperialis.cloudfunctions.net/triggerDailyThought';
 
+// Only show decorative crosses on devices with a fine pointer (mouse/trackpad, not touchscreen)
+const canHover = typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+const CROSS = canHover ? '\u2629' : '';
+
 function getDateStr(offset = 0) {
   const d = new Date();
   d.setDate(d.getDate() + offset);
@@ -142,7 +146,9 @@ function ThoughtBanner() {
           {isPreview && <div className="thought-banner__preview-badge">PREVIEW</div>}
 
           <div className="thought-banner__header">
-            &#x2629;&#xFE0E; THOUGHT FOR THE DAY &#x2629;&#xFE0E;
+            {CROSS && <span className="thought-cross">{CROSS}</span>}{' '}
+            THOUGHT FOR THE DAY
+            {CROSS && <>{' '}<span className="thought-cross">{CROSS}</span></>}
           </div>
 
           <blockquote className="thought-banner__quote">
@@ -190,7 +196,9 @@ function ThoughtBanner() {
       ) : (
         <div className="thought-banner thought-banner--empty">
           <div className="thought-banner__header">
-            &#x2629;&#xFE0E; THOUGHT FOR THE DAY &#x2629;&#xFE0E;
+            {CROSS && <span className="thought-cross">{CROSS}</span>}{' '}
+            THOUGHT FOR THE DAY
+            {CROSS && <>{' '}<span className="thought-cross">{CROSS}</span></>}
           </div>
           <div className="thought-banner__attribution">No thought generated yet.</div>
         </div>

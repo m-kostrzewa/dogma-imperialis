@@ -49,6 +49,14 @@
     color: var(--gold);
     margin-bottom: 18px;
     opacity: 0.85;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.thought-cross {
+    flex-shrink: 0;
 }
 
 /* Quote text — hero size */
