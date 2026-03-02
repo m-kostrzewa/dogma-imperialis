@@ -3,11 +3,11 @@
 const { initializeApp } = require("firebase-admin/app");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { onRequest } = require("firebase-functions/v2/https");
-const {
-    onDocumentCreated,
+const { onDocumentCreated,
     onDocumentUpdated,
     onDocumentDeleted,
 } = require("firebase-functions/v2/firestore");
+const { onSchedule } = require("firebase-functions/v2/scheduler");
 const { algoliasearch } = require("algoliasearch");
 const { GoogleAuth } = require("google-auth-library");
 
@@ -248,5 +248,389 @@ exports.semanticSearch = onRequest(
             console.error("semanticSearch error:", err);
             res.status(500).json({ error: "Internal server error" });
         }
+    }
+);
+
+// ================================================================
+// --- Daily Thought for the Day ---
+// ================================================================
+
+const Anthropic = require("@anthropic-ai/sdk");
+const { XMLParser } = require("fast-xml-parser");
+
+const MODERATOR_UID = "gmhoL3b4R1cRajWnAYBcm4vB9oX2";
+
+const HEADLINE_SOURCES = [
+    { name: "Hacker News", type: "api", url: "https://hacker-news.firebaseio.com/v0/topstories.json" },
+    { name: "BBC World News", type: "rss", url: "https://feeds.bbci.co.uk/news/world/rss.xml" },
+    { name: "Ars Technica", type: "rss", url: "https://feeds.arstechnica.com/arstechnica/index" },
+    { name: "Space.com", type: "rss", url: "https://www.space.com/feeds/all" },
+];
+
+const FALLBACK_THEMES = [
+    "duty", "sacrifice", "obedience", "war", "faith",
+    "technology", "betrayal", "hope", "fear", "vigilance",
+];
+
+/**
+ * Fetch headlines from RSS feed, returning top items from last 24h.
+ */
+async function fetchRSSHeadlines(source) {
+    try {
+        const resp = await fetch(source.url, { signal: AbortSignal.timeout(10000) });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const xml = await resp.text();
+        const parser = new XMLParser({ ignoreAttributes: false });
+        const parsed = parser.parse(xml);
+
+        const channel = parsed?.rss?.channel || parsed?.feed;
+        let items = channel?.item || channel?.entry || [];
+        if (!Array.isArray(items)) items = [items];
+
+        const oneDayAgo = Date.now() - 24 * 60 * 60 * 1000;
+
+        return items
+            .map((item) => {
+                const title = item.title?.["#text"] || item.title || "";
+                const pubDate = item.pubDate || item.published || item.updated || "";
+                const link = item.link?.["@_href"] || item.link?.href || item.link || "";
+                const url = typeof link === "string" ? link.trim() : "";
+                const date = pubDate ? new Date(pubDate) : null;
+                return { title: title.trim(), date, source: source.name, url };
+            })
+            .filter((h) => h.title && (!h.date || h.date.getTime() > oneDayAgo))
+            .slice(0, 5);
+    } catch (err) {
+        console.warn(`Failed to fetch RSS from ${source.name}:`, err.message);
+        return [];
+    }
+}
+
+/**
+ * Fetch top stories from Hacker News API.
+ */
+async function fetchHNHeadlines() {
+    try {
+        const resp = await fetch(HEADLINE_SOURCES[0].url, { signal: AbortSignal.timeout(10000) });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const ids = await resp.json();
+        const top30 = ids.slice(0, 30);
+
+        const stories = await Promise.all(
+            top30.map(async (id) => {
+                try {
+                    const r = await fetch(
+                        `https://hacker-news.firebaseio.com/v0/item/${id}.json`,
+                        { signal: AbortSignal.timeout(5000) }
+                    );
+                    return r.ok ? r.json() : null;
+                } catch {
+                    return null;
+                }
+            })
+        );
+
+        return stories
+            .filter((s) => s && s.title)
+            .map((s) => ({
+                title: s.title.trim(),
+                date: new Date(s.time * 1000),
+                source: "Hacker News",
+                url: s.url || `https://news.ycombinator.com/item?id=${s.id}`,
+            }))
+            .slice(0, 5);
+    } catch (err) {
+        console.warn("Failed to fetch Hacker News:", err.message);
+        return [];
+    }
+}
+
+/**
+ * Fetch headlines from all sources. Returns deduped list.
+ */
+async function fetchAllHeadlines() {
+    const rssSources = HEADLINE_SOURCES.filter((s) => s.type === "rss");
+    const results = await Promise.all([
+        fetchHNHeadlines(),
+        ...rssSources.map((s) => fetchRSSHeadlines(s)),
+    ]);
+
+    const allHeadlines = results.flat();
+
+    // Deduplicate by title (case-insensitive)
+    const seen = new Set();
+    const deduped = [];
+    for (const h of allHeadlines) {
+        const key = h.title.toLowerCase();
+        if (!seen.has(key)) {
+            seen.add(key);
+            deduped.push(h);
+        }
+    }
+
+    return deduped;
+}
+
+/**
+ * Core logic for generating a daily thought pairing.
+ * @param {object} options
+ * @param {boolean} options.dryRun - If true, don't write to Firestore
+ * @returns {object} The generated pairing result
+ */
+async function runDailyThoughtGeneration({ dryRun = false } = {}) {
+    // 1. Fetch headlines
+    let headlines = await fetchAllHeadlines();
+    let useFallback = false;
+
+    if (headlines.length === 0) {
+        // Fallback: pick random theme
+        useFallback = true;
+        const theme = FALLBACK_THEMES[Math.floor(Math.random() * FALLBACK_THEMES.length)];
+        headlines = [{ title: theme, source: "theme", date: new Date() }];
+        console.warn("All headline sources failed, using fallback theme:", theme);
+    }
+
+    // 2. Load all short quotes (≤200 chars) from Firestore
+    const snapshot = await db.collection("quotes").get();
+    const allCandidates = snapshot.docs
+        .map((doc) => ({ id: doc.id, ...doc.data() }))
+        .filter((q) => q.text && q.text.length <= 200);
+
+    // 3. Load recently used IDs
+    const metaDoc = await db.doc("daily_thought/meta").get();
+    let recentIds = metaDoc.exists ? metaDoc.data().recentIds || [] : [];
+
+    // If too few candidates remain after exclusions, reset recent list
+    const excludeSet = new Set(recentIds);
+    let candidates = allCandidates.filter((q) => !excludeSet.has(q.id));
+    if (candidates.length < 50) {
+        console.warn("Fewer than 50 candidates after exclusions, resetting recent IDs.");
+        recentIds = [];
+        candidates = allCandidates;
+    }
+
+    // 4. Shuffle headlines + quotes so repeated calls get different orderings
+    const shuffled = (arr) => {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    };
+    const shuffledHeadlines = shuffled(headlines);
+    const shuffledCandidates = shuffled(candidates);
+
+    // 5. Call Claude Haiku
+    const headlineBlock = shuffledHeadlines
+        .map((h, i) => `${i + 1}. "${h.title}" (${h.source})`)
+        .join("\n");
+
+    const quoteBlock = shuffledCandidates
+        .map((q) => `${q.id} | ${q.text}`)
+        .join("\n");
+
+    const excludeBlock = recentIds.length > 0
+        ? `\nDO NOT pick any of these recently used quote IDs: [${recentIds.join(", ")}]\n`
+        : "";
+
+    const systemPrompt = `You are a curator for a Warhammer 40,000 quote database. Your job is to pick the one quote that creates the most striking, ironic, or thematically resonant pairing with a real-world news headline.
+
+Avoid pairing quotes with headlines about mass casualties, natural disasters with large death tolls, or attacks on civilians. If all headlines are sensitive, pick the most neutral available quote.`;
+
+    const userPrompt = `TODAY'S TOP HEADLINES:
+${headlineBlock}
+
+AVAILABLE QUOTES (id | text):
+${quoteBlock}
+${excludeBlock}
+Instructions:
+- Pick exactly ONE quote that best pairs with ONE headline
+- Prefer ironic, darkly humorous, or philosophically resonant pairings
+- Avoid literal/obvious matches (e.g., don't match a war headline with a quote that just says "war")
+- Creative, unexpected connections are better
+
+Return ONLY valid JSON:
+{
+  "quoteId": "<firestore doc id>",
+  "headlineIndex": <1-based index>,
+  "reasoning": "<one sentence explaining the pairing>"
+}`;
+
+    const anthropic = new Anthropic();
+    let selectedQuoteId = null;
+    let headlineIndex = null;
+    let reasoning = "";
+
+    const candidateIdSet = new Set(candidates.map((q) => q.id));
+
+    for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+            // eslint-disable-next-line no-await-in-loop
+            const msg = await anthropic.messages.create({
+                model: "claude-haiku-4-5-20251001",
+                max_tokens: 256,
+                system: systemPrompt,
+                messages: [{ role: "user", content: userPrompt }],
+            });
+
+            const content = msg.content[0]?.text || "";
+            // Extract JSON from response (may be wrapped in markdown code blocks)
+            const jsonMatch = content.match(/\{[\s\S]*\}/);
+            if (!jsonMatch) throw new Error("No JSON found in response");
+
+            const parsed = JSON.parse(jsonMatch[0]);
+            if (!parsed.quoteId || !parsed.headlineIndex) {
+                throw new Error("Missing required fields in response");
+            }
+            if (!candidateIdSet.has(parsed.quoteId)) {
+                throw new Error(`Invalid quoteId: ${parsed.quoteId}`);
+            }
+
+            selectedQuoteId = parsed.quoteId;
+            headlineIndex = parsed.headlineIndex;
+            reasoning = parsed.reasoning || "";
+            break;
+        } catch (err) {
+            console.warn(`Haiku attempt ${attempt + 1} failed:`, err.message);
+            if (attempt === 1) {
+                // Final fallback: random quote
+                console.warn("Both Haiku attempts failed, picking random quote.");
+                const randomQuote = candidates[Math.floor(Math.random() * candidates.length)];
+                selectedQuoteId = randomQuote.id;
+                headlineIndex = 1;
+                reasoning = "Random fallback — LLM unavailable";
+                useFallback = true;
+            } else {
+                // Wait 65s before retry to clear ITPM rate-limit window
+                console.warn("Waiting 65s before retry (rate-limit cooldown)...");
+                // eslint-disable-next-line no-await-in-loop
+                await new Promise((r) => setTimeout(r, 65000));
+            }
+        }
+    }
+
+    // Get full quote data
+    const quoteDoc = await db.doc(`quotes/${selectedQuoteId}`).get();
+    const quote = quoteDoc.data();
+    const headline = shuffledHeadlines[headlineIndex - 1] || shuffledHeadlines[0];
+
+    const todayStr = new Date().toISOString().split("T")[0];
+
+    const result = {
+        quoteId: selectedQuoteId,
+        quoteText: quote.text,
+        quoteLoreSource: quote.lore_source || "",
+        quoteRealSource: quote.real_source || "",
+        quoteTags: quote.tags || [],
+        headline: useFallback && headline.source === "theme" ? "" : headline.title,
+        headlineSource: useFallback && headline.source === "theme" ? "" : headline.source,
+        headlineUrl: useFallback && headline.source === "theme" ? "" : (headline.url || ""),
+        reasoning: reasoning,
+        date: todayStr,
+        model: "claude-haiku-4-5-20251001",
+        createdAt: FieldValue.serverTimestamp(),
+    };
+
+    if (!dryRun) {
+        // 5. Write result to Firestore
+        await db.doc(`daily_thought/${todayStr}`).set(result);
+
+        // 6. Update recent IDs
+        const updatedRecent = [selectedQuoteId, ...recentIds].slice(0, 90);
+        await db.doc("daily_thought/meta").set({ recentIds: updatedRecent });
+
+        console.log(`Daily thought saved for ${todayStr}: quote=${selectedQuoteId}, headline="${headline.title}"`);
+    }
+
+    return result;
+}
+
+// --- Scheduled trigger: runs daily at 06:00 UTC ---
+exports.generateDailyThought = onSchedule(
+    {
+        schedule: "0 6 * * *",
+        timeZone: "UTC",
+        region: "europe-west3",
+        timeoutSeconds: 120,
+        memory: "512MiB",
+    },
+    async () => {
+        await runDailyThoughtGeneration();
+    }
+);
+
+// --- Manual trigger / debug endpoint (mod-only) ---
+exports.triggerDailyThought = onRequest(
+    { region: "europe-west3", cors: ALLOWED_ORIGINS, memory: "1GiB", timeoutSeconds: 540 },
+    async (req, res) => {
+        // Verify moderator auth
+        const idToken = req.headers.authorization?.split("Bearer ")[1];
+        if (!idToken) {
+            res.status(401).json({ error: "No auth token" });
+            return;
+        }
+
+        const admin = require("firebase-admin");
+        let decoded;
+        try {
+            decoded = await admin.auth().verifyIdToken(idToken);
+        } catch (err) {
+            res.status(401).json({ error: "Invalid auth token" });
+            return;
+        }
+
+        if (decoded.uid !== MODERATOR_UID) {
+            res.status(403).json({ error: "Not moderator" });
+            return;
+        }
+
+        const isDryRun = req.query.dryRun === "true";
+        const isSave = req.query.save === "true";
+
+        if (isSave && req.method === "POST") {
+            // Save a previously previewed pairing
+            const preview = req.body;
+            if (!preview || !preview.quoteId) {
+                res.status(400).json({ error: "Missing preview data" });
+                return;
+            }
+            const todayStr = new Date().toISOString().split("T")[0];
+            const result = {
+                quoteId: preview.quoteId,
+                quoteText: preview.quoteText,
+                quoteLoreSource: preview.quoteLoreSource || "",
+                quoteRealSource: preview.quoteRealSource || "",
+                quoteTags: preview.quoteTags || [],
+                headline: preview.headline || "",
+                headlineSource: preview.headlineSource || "",
+                headlineUrl: preview.headlineUrl || "",
+                reasoning: preview.reasoning || "",
+                date: todayStr,
+                model: preview.model || "manual-save",
+                createdAt: FieldValue.serverTimestamp(),
+            };
+            await db.doc(`daily_thought/${todayStr}`).set(result);
+
+            // Update recent IDs
+            const metaDoc = await db.doc("daily_thought/meta").get();
+            const recentIds = metaDoc.exists ? metaDoc.data().recentIds || [] : [];
+            const updatedRecent = [preview.quoteId, ...recentIds].slice(0, 90);
+            await db.doc("daily_thought/meta").set({ recentIds: updatedRecent });
+
+            res.status(200).json(result);
+            return;
+        }
+
+        if (isDryRun) {
+            // Preview mode: generate without saving
+            const result = await runDailyThoughtGeneration({ dryRun: true });
+            res.status(200).json(result);
+            return;
+        }
+
+        // Default: generate and save
+        const result = await runDailyThoughtGeneration();
+        res.status(200).json(result);
     }
 );

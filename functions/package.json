@@ -13,7 +13,9 @@
     "node": "22"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
     "algoliasearch": "^5.0.0",
+    "fast-xml-parser": "^4.0.0",
     "firebase-admin": "^13.0.0",
     "firebase-functions": "^6.0.0",
     "google-auth-library": "^10.6.1"

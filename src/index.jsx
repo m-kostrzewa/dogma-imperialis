@@ -10,6 +10,7 @@ import Firebase, { FirebaseContext } from './components/firebase';
 import CogitatorComponent from './components/cogitator.jsx';
 import QuotationComponent from './components/quotation.jsx';
 import ModLogin from './components/modLogin.jsx';
+import ThoughtBanner from './components/thoughtBanner.jsx';
 
 const algoliaClient = algoliasearch(
   import.meta.env.VITE_ALGOLIA_APP_ID,
@@ -188,6 +189,7 @@ root.render(
         <img className="mobile-hide" id="skull" src="czacha.png" />
 
         <article id="content-wrap">
+          <ThoughtBanner />
           <InstantSearch
             indexName="prod_QUOTES"
             searchClient={searchClient}
