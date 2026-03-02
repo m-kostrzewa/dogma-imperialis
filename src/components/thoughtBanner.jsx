@@ -142,7 +142,7 @@ function ThoughtBanner() {
           {isPreview && <div className="thought-banner__preview-badge">PREVIEW</div>}
 
           <div className="thought-banner__header">
-            &#x2629; THOUGHT FOR THE DAY &#x2629;
+            &#x2629;&#xFE0E; THOUGHT FOR THE DAY &#x2629;&#xFE0E;
           </div>
 
           <blockquote className="thought-banner__quote">
@@ -190,7 +190,7 @@ function ThoughtBanner() {
       ) : (
         <div className="thought-banner thought-banner--empty">
           <div className="thought-banner__header">
-            &#x2629; THOUGHT FOR THE DAY &#x2629;
+            &#x2629;&#xFE0E; THOUGHT FOR THE DAY &#x2629;&#xFE0E;
           </div>
           <div className="thought-banner__attribution">No thought generated yet.</div>
         </div>
