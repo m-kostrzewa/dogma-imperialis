@@ -12,6 +12,10 @@
     transition: border-color var(--transition-med);
 }
 
+.quote--long {
+    text-align: justify;
+}
+
 .quotation-wrapper:hover {
     border-bottom-color: var(--gold-dim);
 }

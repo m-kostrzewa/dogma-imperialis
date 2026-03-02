@@ -69,6 +69,11 @@
     padding: 0;
     border: none;
     font-style: normal;
+    text-align: center;
+}
+
+.thought-banner__quote--long {
+    text-align: justify;
 }
 
 /* Attribution */

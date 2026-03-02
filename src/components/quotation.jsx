@@ -18,10 +18,12 @@ class QuotationComponent extends React.Component {
 
     this.clippedRef = React.createRef();
     this.detailsRef = React.createRef();
+    this.qRef = React.createRef();
 
     this.state = {
       quotation: props.hit,
       showEditForm: false,
+      isLongQuote: false,
     };
   }
 
@@ -58,6 +60,14 @@ class QuotationComponent extends React.Component {
     if (el && el.scrollHeight <= el.clientHeight) {
       el.classList.add('no-clip');
     }
+    // Measure line count and justify long quotes
+    const q = this.qRef.current;
+    if (q) {
+      const lineHeight = parseFloat(getComputedStyle(q).lineHeight);
+      if (q.scrollHeight / lineHeight >= 5) {
+        this.setState({ isLongQuote: true });
+      }
+    }
   }
 
   formatNewlines(text) {
@@ -90,14 +100,14 @@ class QuotationComponent extends React.Component {
   }
 
   render() {
-    const { quotation, showEditForm } = this.state;
+    const { quotation, showEditForm, isLongQuote } = this.state;
     const text = this.formatNewlines(quotation.text);
 
     return (
       <div className="quotation-wrapper" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
         <section className="quotation">
           <div className="quotation-clipped" ref={this.clippedRef}>
-            <q>{text}</q>
+            <q ref={this.qRef} className={isLongQuote ? 'quote--long' : ''}>{text}</q>
           </div>
           <cite><div dangerouslySetInnerHTML={{ __html: quotation.lore_source }} /></cite>
           {quotation._semantic && <div className="semantic-badge">matched by meaning</div>}

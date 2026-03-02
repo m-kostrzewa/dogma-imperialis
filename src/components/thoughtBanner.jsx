@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback, useRef } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { getIdToken } from 'firebase/auth';
 import { FirebaseContext } from './firebase';
@@ -23,6 +23,16 @@ function ThoughtBanner() {
   const [expanded, setExpanded] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [preview, setPreview] = useState(null);
+  const [isLongQuote, setIsLongQuote] = useState(false);
+
+  // Measure line count of the blockquote after render
+  const quoteRef = useCallback((node) => {
+    if (node) {
+      const lineHeight = parseFloat(getComputedStyle(node).lineHeight);
+      const lines = node.scrollHeight / lineHeight;
+      setIsLongQuote(lines >= 5);
+    }
+  }, []);
   const [generating, setGenerating] = useState(false);
   const [saving, setSaving] = useState(false);
   const [genError, setGenError] = useState('');
@@ -151,7 +161,7 @@ function ThoughtBanner() {
             {CROSS && <>{' '}<span className="thought-cross">{CROSS}</span></>}
           </div>
 
-          <blockquote className="thought-banner__quote">
+          <blockquote ref={quoteRef} className={`thought-banner__quote${isLongQuote ? ' thought-banner__quote--long' : ''}`}>
             &ldquo;{display.quoteText}&rdquo;
           </blockquote>
 
