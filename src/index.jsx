@@ -180,6 +180,25 @@ function AutoInfiniteHits() {
   );
 }
 
+function slowScrollToAnchor() {
+  const anchor = document.getElementById('cogitator-anchor');
+  if (!anchor) return;
+  const targetY = anchor.getBoundingClientRect().top + window.scrollY;
+  const startY = window.scrollY;
+  const diff = targetY - startY;
+  let startTime = null;
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / 1200, 1);
+    const ease = progress < 0.5
+      ? 2 * progress * progress
+      : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+    window.scrollTo(0, startY + diff * ease);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
 const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -189,7 +208,23 @@ root.render(
         <img className="mobile-hide" id="skull" src="czacha.png" />
 
         <article id="content-wrap">
-          <ThoughtBanner />
+          <section className="hero-section">
+            <ThoughtBanner />
+            <div
+              className="scroll-hint"
+              onClick={() => slowScrollToAnchor()}
+              aria-label="Scroll to search"
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) =>
+                e.key === 'Enter' && slowScrollToAnchor()
+              }
+            >
+              &#x25BE;
+            </div>
+          </section>
+
+          <div id="cogitator-anchor" />
           <InstantSearch
             indexName="prod_QUOTES"
             searchClient={searchClient}

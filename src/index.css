@@ -1,72 +1,153 @@
+/* ═══════════════════════════════════════════
+   Design tokens — unified Imperial palette
+   ═══════════════════════════════════════════ */
 :root {
+    /* Background scale */
+    --bg-deep:   rgb(30, 27, 24);
+    --bg-base:   rgb(35, 32, 30);
+    --bg-raised: rgb(45, 40, 36);
+    --bg-card:   rgba(50, 44, 38, 0.6);
+
+    /* Text */
+    --text-primary:   antiquewhite;
+    --text-muted:     rgba(250, 235, 215, 0.55);
+    --text-faint:     rgba(250, 235, 215, 0.3);
+
+    /* Accents */
+    --gold:           rgb(184, 157, 101);
+    --gold-bright:    rgb(220, 185, 120);
+    --gold-dim:       rgba(139, 90, 43, 0.5);
+    --crimson:        rgb(140, 25, 25);
+    --crimson-bright: rgb(170, 35, 35);
+
+    /* Borders */
+    --border-subtle:  rgba(139, 90, 43, 0.25);
+    --border-medium:  rgba(139, 90, 43, 0.45);
+    --border-strong:  rgba(179, 120, 60, 0.6);
+
+    /* Shared transitions */
+    --transition-fast: 0.2s ease;
+    --transition-med:  0.3s ease;
+    --transition-slow: 0.6s ease;
+
+    /* Type scale */
+    --font-xs:  11px;
+    --font-sm:  13px;
+    --font-md:  16px;
+    --font-lg:  22px;
+    --font-xl:  30px;
+    --font-hero: clamp(20px, 3.5vw, 32px);
+
+    /* Layout */
+    --radius:    2px;
+    --max-width: 1000px;
+
+    /* Legacy compat */
     --text-color: antiquewhite;
-    --text-color-hover: rgb(179, 32, 32);
+    --text-color-hover: var(--gold-bright);
 }
 
+/* ─── Base ─── */
 body {
     padding: 0;
     margin: 0;
-    background-color: rgba(40,40,40);
-    font-family: 'Cinzel';
-    color: antiquewhite;
+    background-color: var(--bg-deep);
+    font-family: 'Cinzel', serif;
+    color: var(--text-primary);
 }
 
 #page-container {
     display: flex;
     flex-flow: column nowrap;
     justify-content: start;
-
-    max-width: 1000px;
+    max-width: var(--max-width);
     margin: auto;
-
     position: relative;
     min-height: 100vh;
     padding: 0;
 }
 
+/* ─── Hero section (Thought for the Day) ─── */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+    padding: 40px 20px 0;
+    position: relative;
+}
 
+/* Scroll-down hint arrow */
+.scroll-hint {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-hint-bob 2.5s ease-in-out infinite;
+    color: var(--gold-dim);
+    font-size: 24px;
+    opacity: 0.6;
+    transition: opacity var(--transition-med);
+    cursor: pointer;
+    user-select: none;
+}
+.scroll-hint:hover {
+    opacity: 1;
+    color: var(--gold);
+}
+@keyframes scroll-hint-bob {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ─── Footer ─── */
 footer {
     position: fixed;
     left: 8px;
     bottom: 30px;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    font-size: 10px;
-    color: antiquewhite;
-    font-family: 'Cinzel';
+    font-size: var(--font-xs);
+    color: var(--text-muted);
+    font-family: 'Cinzel', serif;
     text-align: center;
-    opacity: 0.5;
-    transition: opacity 0.3s;
+    opacity: 0.4;
+    transition: opacity var(--transition-med);
     z-index: 10;
 }
 footer:hover {
     opacity: 1;
 }
 footer a {
-    color: rgba(var(--text-color), 0.8);
-    font-family: 'Cinzel';
+    color: var(--text-muted);
+    font-family: 'Cinzel', serif;
     text-decoration: none;
 }
 footer a:hover {
+    color: var(--gold);
     text-decoration: underline;
 }
 footer a.active {
     text-decoration: none;
 }
 
-
+/* ─── Empty results ─── */
 .no-results {
     display: block;
     width: 50%;
-    margin: auto;
-    margin-top: 20px;
+    margin: 40px auto;
     text-align: center;
+    color: var(--text-muted);
+    font-size: var(--font-md);
+    letter-spacing: 1px;
 }
 
+/* ─── Servo-skull ─── */
 @keyframes servoskull-float-anim {
-    0%   {transform: translateY(0px);}
-    50%  {transform: translateY(-20px);}
-    100% {transform: translateY(0px);}
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 #skull {
     position: fixed;
@@ -78,6 +159,7 @@ footer a.active {
     will-change: transform;
 }
 
+/* ─── Hit list ─── */
 .ais-InfiniteHits ul, .ais-InfiniteHits ol, .ais-InfiniteHits-list {
     list-style-type: none;
     padding: 0;
@@ -87,48 +169,50 @@ footer a.active {
     display: none;
 }
 
-
+/* ─── Buttons (shared) ─── */
 .ais-InfiniteHits-loadMore, .button-small {
     display: block;
-
     margin: 5px auto;
-
-    background-color: rgb(117, 17, 17);
-    background-image: linear-gradient(rgb(117, 17, 17), rgb(85, 11, 11));
-
-    border-radius: 2px;
-
+    background: linear-gradient(var(--crimson), rgb(100, 18, 18));
+    border-radius: var(--radius);
     max-width: 300px;
-    border: none;
-    padding: 5px 15px;
+    border: 1px solid rgba(179, 50, 50, 0.3);
+    padding: 6px 18px;
     text-decoration: none;
     cursor: pointer;
-    color: antiquewhite;
-    font-family: 'Cinzel';
-    font-size: 16px;
+    color: var(--text-primary);
+    font-family: 'Cinzel', serif;
+    font-size: var(--font-md);
+    letter-spacing: 0.5px;
+    transition: background var(--transition-fast), border-color var(--transition-fast);
 }
 
 .ais-InfiniteHits-loadMore:hover, .button-small:hover {
-    background-image: linear-gradient(rgb(146, 11, 11), rgb(117, 11, 11));
+    background: linear-gradient(var(--crimson-bright), var(--crimson));
+    border-color: rgba(200, 60, 60, 0.5);
 }
 
 .ais-InfiniteHits-loadMore:active, .button-small:active {
-    background-image: linear-gradient(rgb(85, 11, 11), rgb(117, 17, 17));
+    background: linear-gradient(rgb(100, 18, 18), var(--crimson));
 }
 
-
-
+/* ─── Responsive ─── */
 @media screen and (max-width: 1400px) {
-    /* hide on mobile */
-   .mobile-hide {
-      display: none !important;
-   }
-   footer {
-      position: static;
-      writing-mode: horizontal-tb;
-      text-orientation: initial;
-      text-align: center;
-      margin: 40px auto 10px;
-      opacity: 1;
-   }
+    .mobile-hide {
+        display: none !important;
+    }
+    footer {
+        position: static;
+        writing-mode: horizontal-tb;
+        text-orientation: initial;
+        text-align: center;
+        margin: 40px auto 10px;
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 600px) {
+    .hero-section {
+        min-height: 80vh;
+        padding: 30px 12px 0;
+    }
 }

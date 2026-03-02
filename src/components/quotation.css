@@ -1,9 +1,19 @@
+/* ═══════════════════════════════════════════
+   Quotation cards
+   ═══════════════════════════════════════════ */
 
 .quotation-wrapper {
-    margin: auto;
-    margin-top: 60px;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    padding: 28px 24px 20px;
     text-align: center;
+
+    /* Subtle bottom divider instead of card bg */
+    border-bottom: 1px solid var(--border-subtle);
+    transition: border-color var(--transition-med);
+}
+
+.quotation-wrapper:hover {
+    border-bottom-color: var(--gold-dim);
 }
 
 .quotation-clipped {
@@ -20,7 +30,7 @@
     left: 0;
     right: 0;
     height: 2em;
-    background: linear-gradient(transparent, rgba(40, 40, 40, 1));
+    background: linear-gradient(transparent, var(--bg-deep));
     transition: opacity 0.5s ease-out;
 }
 
@@ -30,65 +40,61 @@
     pointer-events: none;
 }
 
-
 @keyframes fade-in-anim {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
 }
-.quotation {
-	animation-name: fade-in-anim;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-    animation-duration: 1s;
-    animation-fill-mode: backwards;
 
-    color: var(--text-color);
-    transition: color 0.5s ease;
+.quotation {
+    animation: fade-in-anim 0.8s ease-in backwards;
+    color: var(--text-primary);
+    transition: color var(--transition-slow);
 }
 
 .quotation:hover {
-    color: var(--text-color-hover);
-    transition: color 0.5s ease;
+    color: var(--gold-bright);
 }
-
 
 .quotation q {
     display: block;
-    font-family: 'Cinzel';
-    font-size: 30px;
+    font-family: 'Cinzel', serif;
+    font-size: var(--font-xl);
+    line-height: 1.4;
     padding: 10px;
 }
 
 .quotation > cite {
     display: block;
-    font-family: 'Cinzel';
+    font-family: 'Cinzel', serif;
     font-style: normal;
-    font-size: 16px;
+    font-size: var(--font-md);
     margin: 15px 20px 2px 20px;
     text-align: right;
+    color: var(--gold);
+    opacity: 0.75;
 }
-
-
 
 .quotation a {
-    text-decoration: none;
-    color: rgba(var(--text-color), 0.8);
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--gold-dim);
+    text-underline-offset: 2px;
+    transition: text-decoration-color var(--transition-fast);
 }
 .quotation a:hover {
-    color: rgba(var(--text-color-hover), 0.8);
-    text-decoration: underline;
+    text-decoration-color: var(--gold);
 }
 .quotation a.active {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
-
 .semantic-badge {
-    font-family: 'Cinzel';
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    color: #b89d65;
-    opacity: 0.7;
+    font-family: 'Cinzel', serif;
+    font-size: var(--font-xs);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.6;
     margin-top: 6px;
     text-align: right;
     margin-right: 20px;
@@ -97,9 +103,8 @@
 .quote-details {
     display: flex;
     flex-flow: row wrap;
-
     margin-top: 15px;
-    color: antiquewhite;
+    color: var(--text-muted);
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -116,13 +121,12 @@
 }
 
 .quote-details > * {
-    font-size: 16px;
-    font-family: 'Cinzel';
+    font-size: var(--font-md);
+    font-family: 'Cinzel', serif;
 }
 
 .quote-details cite {
     flex-basis: 49%;
-
     font-style: normal;
     text-align: right;
 }
@@ -133,14 +137,17 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-  }
+}
 
 .quote-details li {
     padding-left: 3px;
+    color: var(--gold);
+    opacity: 0.7;
 }
 
 .quote-details li:after {
     content: " \00b7";
+    color: var(--text-faint);
 }
 
 .quote-details li:last-child:after {

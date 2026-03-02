@@ -1,11 +1,10 @@
 .quotation-edit-form form {
     display: flex;
     flex-flow: column nowrap;
-    font-size: 16px;
-    align-items:flex-end;
-
+    font-size: var(--font-md);
+    align-items: flex-end;
     width: 100%;
-    color: var(--text-color);
+    color: var(--text-primary);
 }
 
 .form-row {
@@ -18,27 +17,34 @@
     flex-basis: 20%;
     text-align: right;
     margin: 5px auto;
+    color: var(--gold);
+    font-size: var(--font-sm);
+    letter-spacing: 0.5px;
 }
 
 .quotation-edit-form-field {
     flex-grow: 1;
-
     padding: 0;
     margin: 0;
     margin-top: 5px;
     margin-left: 10px;
 
-    background-color: rgba(40, 40, 40, 1);
-    background-image: linear-gradient(rgba(130, 130, 130, 1), rgba(160, 160, 160, 1));
-
+    background-color: var(--bg-base);
+    background-image: linear-gradient(rgba(100, 85, 65, 0.2), rgba(80, 68, 52, 0.2));
     background-blend-mode: overlay;
 
-    border: 1px solid rgba(60, 60, 60, 1);
-    border-radius: 3px;
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius);
 
-    font-family: 'Cinzel';
+    font-family: 'Cinzel', serif;
     text-align: left;
-    color: var(--text-color);
+    color: var(--text-primary);
+    transition: border-color var(--transition-fast);
+}
+
+.quotation-edit-form-field:focus {
+    outline: none;
+    border-color: var(--border-strong);
 }
 
 .quotation-edit-form-lower-div {
@@ -52,4 +58,5 @@
 
 .quotation-edit-form-status-text {
     text-align: center;
+    color: var(--text-muted);
 }
