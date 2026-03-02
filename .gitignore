@@ -32,3 +32,6 @@ dogma-imperialis-*.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+scrapers/.venv/**
+scrapers/html/**

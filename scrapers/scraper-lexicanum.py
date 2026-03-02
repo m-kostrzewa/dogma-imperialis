@@ -1,10 +1,52 @@
 import json
 import sys
 import re
+import os
 from datetime import datetime
 
-import requests
 from bs4 import BeautifulSoup
+
+# Map URL path suffixes to local HTML filenames in html/ directory
+# Files were saved as "Page Title - Warhammer 40k - Lexicanum.html"
+HTML_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html')
+
+def url_to_local_file(url):
+    """Find the local HTML file matching a Lexicanum URL by matching the wiki page name."""
+    # Extract wiki page name from URL, e.g. 'Quotes_Imperium' from '.../wiki/Quotes_Imperium'
+    page_name = url.split('/wiki/')[-1]
+    # Convert underscores to spaces for matching
+    page_name_spaced = page_name.replace('_', ' ')
+    # URL-decode parentheses
+    page_name_spaced = page_name_spaced.replace('%28', '(').replace('%29', ')')
+    
+    # Build list of (title, filepath) from HTML dir
+    html_files = []
+    for fname in os.listdir(HTML_DIR):
+        if fname.endswith('.html'):
+            title = fname.replace(' - Warhammer 40k - Lexicanum.html', '')
+            html_files.append((title, os.path.join(HTML_DIR, fname)))
+    
+    # Exact match
+    for title, fpath in html_files:
+        if title == page_name_spaced:
+            return fpath
+    
+    # Some URLs have "Quotes_X" but page title is "X Quotes" (Lexicanum redirects)
+    # e.g. Quotes_Imperium -> Imperium Quotes, Quotes_Space_Marines -> Space Marine Quotes
+    if page_name_spaced.startswith('Quotes '):
+        alt_name = page_name_spaced.replace('Quotes ', '') + ' Quotes'
+        for title, fpath in html_files:
+            if title == alt_name:
+                return fpath
+    
+    # Fuzzy: compare lowercased, ignore word order
+    page_words = set(page_name_spaced.lower().split())
+    for title, fpath in html_files:
+        title_words = set(title.lower().split())
+        if page_words == title_words:
+            return fpath
+    
+    raise FileNotFoundError(f"No local HTML file found for {url} (looked for '{page_name_spaced}' in {HTML_DIR})")
 
 quote_urls = [
     {
@@ -106,7 +148,21 @@ quote_urls = [
     {
         "tags": ["Imperium of Man", "Tactica Imperium"],
         "url": "https://wh40k.lexicanum.com/wiki/Tactica_Imperium_passages"
-    }
+    },
+
+    # New categories added March 2026
+    {
+        "tags": ["Eldar", "Corsair"],
+        "url": "https://wh40k.lexicanum.com/wiki/Corsair_Quotes",
+    },
+    {
+        "tags": ["Eldar", "Harlequin"],
+        "url": "https://wh40k.lexicanum.com/wiki/Harlequin_Quotes",
+    },
+    {
+        "tags": ["Leagues of Votann"],
+        "url": "https://wh40k.lexicanum.com/wiki/Leagues_of_Votann_Quotes",
+    },
 ]
 
 
@@ -186,16 +242,24 @@ def add_entry(text, real_source, lore_source, tags):
 for qu in quote_urls:
     sys.stderr.write(f"-----------------------------\nNow scraping {qu['url']}\n")
 
-    r = requests.get(qu["url"])
-    soup = BeautifulSoup(r.text, "html.parser")
+    local_file = url_to_local_file(qu["url"])
+    sys.stderr.write(f"Reading from {local_file}\n")
+    with open(local_file, 'r', encoding='utf-8') as f:
+        soup = BeautifulSoup(f.read(), "html.parser")
 
-    unattributed_section = soup.find('span', text=re.compile('Unattributed'))
+    unattributed_section = soup.find('span', string=re.compile('Unattributed'))
     if unattributed_section is None:
         sys.stderr.write(f"Unattributed section not found {qu['url']}\n")
-    sys.stderr.write(f"Unattributed section found {qu['url']}\n")
+    else:
+        sys.stderr.write(f"Unattributed section found {qu['url']}\n")
 
 
-    tables = soup.find_all("table")
+    all_tables = soup.find_all("table")
+    # Filter out non-content tables (mbox notices, protection banners, etc.)
+    tables = [t for t in all_tables if not any(
+        cls in (t.get('class') or [])
+        for cls in ['mbox-notice', 'mbox-protection', 'mbox-small', 'nottemplate']
+    )]
 
     for idx, table in enumerate(tables):
         if table is None: continue
@@ -248,8 +312,8 @@ for qu in quote_urls:
                     lore_source_cell_idx=-1
                     lore_source = "Tactica Imperium"
                 elif '/Thought_for_the_day' in qu["url"]:
-                    text_cell_idx=1
-                    real_source_cell_idx=2
+                    text_cell_idx=0
+                    real_source_cell_idx=1
                     lore_source_cell_idx=-1
                     lore_source = "Thought for the day"
                 else:

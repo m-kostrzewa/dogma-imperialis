@@ -3,7 +3,7 @@ import string
 import sys
 import re
 
-with open("out.out", "r") as input_file:
+with open("out.out", "r", encoding="utf-16") as input_file:
     quotes = json.load(input_file)
 
 

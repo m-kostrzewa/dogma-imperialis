@@ -1,3 +1,14 @@
 *.out
+*.log
 venv/
+.venv/
+.env
+__pycache__/
 .vscode
+
+# Intermediate / generated data (regenerable from pipeline)
+chunks/
+chunks_cleaned/
+firestore_export.json
+merged_deduped.json
+orphans.json
