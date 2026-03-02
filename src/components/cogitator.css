@@ -51,6 +51,7 @@ input[type=search]::-ms-clear {
 
 .cogitator {
     font-family: 'Cinzel', serif;
+    animation: fade-in-up 1s ease-out 1.8s backwards;
 }
 
 .cogitator a {

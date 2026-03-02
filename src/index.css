@@ -84,7 +84,7 @@ body {
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
-    animation: scroll-hint-bob 2.5s ease-in-out infinite;
+    animation: scroll-hint-bob 2.5s ease-in-out infinite, fade-in-up 1s ease-out 2s backwards;
     color: var(--gold-dim);
     font-size: 24px;
     opacity: 0.6;
@@ -115,6 +115,7 @@ footer {
     opacity: 0.4;
     transition: opacity var(--transition-med);
     z-index: 10;
+    animation: fade-in-up 1s ease-out 2.4s backwards;
 }
 footer:hover {
     opacity: 1;
@@ -155,7 +156,7 @@ footer a.active {
     bottom: 30px;
     max-width: 200px;
     height: auto;
-    animation: servoskull-float-anim 7s ease-in-out infinite;
+    animation: servoskull-float-anim 7s ease-in-out infinite, fade-in 1.2s ease-out 2.2s backwards;
     will-change: transform;
 }
 
@@ -215,4 +216,14 @@ footer a.active {
         min-height: 80vh;
         padding: 30px 12px 0;
     }
+}
+
+/* ─── Shared animation ─── */
+@keyframes fade-in-up {
+    0%   { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
 }
