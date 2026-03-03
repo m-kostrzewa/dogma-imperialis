@@ -283,6 +283,8 @@ root.render(
         <footer>
           &copy; 2026 Michał Kostrzewa
           <span className="footer-sep"> · </span>
+          <a href="https://github.com/m-kostrzewa/dogma-imperialis" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span className="footer-sep"> · </span>
           <ModLogin />
         </footer>
       </div>
