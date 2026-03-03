@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut as firebaseSignOut } from 'firebase/auth';
+import { getAnalytics, isSupported } from 'firebase/analytics';
 
 const config = {
   apiKey: 'AIzaSyAHXoy1DgjukC9DjN3JKdV6Nns3Lui5hqA',
@@ -19,6 +20,11 @@ class Firebase {
     this.db = getFirestore(app);
     this.auth = getAuth(app);
     this.authProvider = new GoogleAuthProvider();
+
+    // Firebase Analytics — auto-collects page views, sessions, etc.
+    isSupported().then((supported) => {
+      if (supported) this.analytics = getAnalytics(app);
+    });
     this.authProvider.addScope('https://www.googleapis.com/auth/datastore');
 
     this.currentUser = null;
