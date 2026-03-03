@@ -33,14 +33,23 @@ React UI (Vite-built SPA on Firebase Hosting)
 | Firebase config (public) | Hardcoded in `src/components/firebase/firebase.js` | No (safe, public keys) |
 | Legacy runtime config backup | `.runtimeconfig-backup.json` | Yes |
 
+## Thought for the Day
+Daily banner: Claude Haiku (`claude-haiku-4-5-20251001`) pairs a quote with a real-world headline.
+- **Backend:** `@anthropic-ai/sdk`, `fast-xml-parser` (RSS), HN API. Scheduled 06:00 UTC + mod HTTP trigger with `?dryRun=true` / `POST ?save=true`.
+- **Firestore:** `daily_thought/{YYYY-MM-DD}` (result), `daily_thought/meta` (90-day `recentIds` dedup).
+- **Propagation:** `collectionOnUpdate` trigger syncs quote edits into any referencing `daily_thought` docs.
+- **Frontend:** `src/components/thoughtBanner.jsx` / `.css`. Mod preview/save/discard workflow.
+- **Secrets:** `ANTHROPIC_API_KEY` in `functions/.env`.
+
 ## Key Files
 - `src/index.jsx` — App entry point, Algolia InstantSearch provider
 - `src/components/firebase/firebase.js` — Firebase modular SDK init (v11)
 - `src/components/quotationEditForm.jsx` — Quote edit/delete form (mod + public suggestion)
+- `src/components/thoughtBanner.jsx` — Daily thought banner (mod preview/save/discard)
 - `src/components/debouncedSearch.jsx` — Debounced search box (useSearchBox hook)
 - `src/components/debouncedRefListSearch.jsx` — Debounced tag filter (useRefinementList hook)
-- `functions/index.js` — Cloud Functions: Algolia sync triggers + bulk reindex endpoint
-- `functions/.env` — Algolia admin credentials for Cloud Functions
+- `functions/index.js` — Cloud Functions: Algolia sync, daily thought generation, semantic search
+- `functions/.env` — Algolia + Anthropic credentials for Cloud Functions
 
 ## Commands
 ```bash
@@ -81,6 +90,14 @@ The `scrapers/` directory contains a Python pipeline for refreshing the quote da
 
 Requires: Python 3.11 venv in `scrapers/.venv/`, `ANTHROPIC_API_KEY` in root `.env`, GCP service account key in repo root.
 Intermediate data (`chunks/`, `chunks_cleaned/`, `*.json`, `*.log`) is gitignored.
+
+## Search by Meaning (Semantic Search)
+Vector search merged with Algolia via Reciprocal Rank Fusion (RRF, k=60).
+- **Embeddings:** Google `text-embedding-004` (768 dims), Vertex AI REST API, stored as Firestore vector fields.
+- **Vector index:** Firestore COSINE flat index. `semanticSearch` Cloud Function (`distanceThreshold: 1.5`).
+- **Sync:** `computeEmbedding()` called in `onCreate`/`onUpdate` triggers. Backfill: `scrapers/compute_embeddings.py`.
+- **Frontend:** Custom `searchClient` in `src/index.jsx` — merges Algolia + semantic results. `src/searchMode.js` shared state + `SEARCH_MODE_EVENT`. Text/Meaning checkboxes in `debouncedSearch.jsx`. "matched by meaning" badge in `quotation.jsx`.
+- **Auth:** `google-auth-library` in Cloud Functions for Vertex AI access.
 
 ## Contact Form / Email Feature
 **Removed** in March 2026 refresh. The `contactFormSubmit` Cloud Function and `blockSignup` auth trigger were deleted. The form's non-mod path now shows "temporarily unavailable". If re-implementing, consider a transactional email service (SendGrid, Resend) instead of Gmail.
