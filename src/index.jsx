@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 
@@ -23,6 +23,8 @@ const randomOffset = Math.floor(Math.random() * ESTIMATED_TOTAL_HITS);
 // --- Semantic search config ---
 const SEMANTIC_SEARCH_URL = 'https://europe-west3-dogma-imperialis.cloudfunctions.net/semanticSearch';
 const MIN_SEMANTIC_QUERY_LENGTH = 4;
+
+import { searchMode, SEARCH_MODE_EVENT } from './searchMode';
 
 // Cross-page dedup: tracks objectIDs already shown. Resets on page 0.
 const seenObjectIDs = new Set();
@@ -90,34 +92,55 @@ const searchClient = {
       return req;
     });
 
-    const shouldDoSemantic = query
+    const canSemantic = searchMode.semantic
+      && query
       && query.length >= MIN_SEMANTIC_QUERY_LENGTH
-      && page === 0
       && !hasFacetFilters;
 
-    if (shouldDoSemantic) {
+    // Semantic-only mode, pages 1+: no more results to show
+    if (canSemantic && !searchMode.text && page > 0) {
+      const algoliaResponse = await algoliaClient.search(modified, ...rest);
+      algoliaResponse.results[0].hits = [];
+      algoliaResponse.results[0].nbHits = seenObjectIDs.size;
+      algoliaResponse.results[0].nbPages = 1;
+      return algoliaResponse;
+    }
+
+    if (canSemantic && page === 0) {
+      const semanticPromise = fetch(SEMANTIC_SEARCH_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query, limit: 20 }),
+      })
+        .then((r) => r.json())
+        .then((data) => data.hits || [])
+        .catch(() => []);
+
       const [algoliaResponse, semanticHits] = await Promise.all([
         algoliaClient.search(modified, ...rest),
-        fetch(SEMANTIC_SEARCH_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ query, limit: 20 }),
-        })
-          .then((r) => r.json())
-          .then((data) => data.hits || [])
-          .catch(() => []),
+        semanticPromise,
       ]);
 
-      // RRF merge
-      const algoliaHits = algoliaResponse.results[0].hits;
-      const merged = rrfMerge(algoliaHits, semanticHits, query);
+      if (searchMode.text) {
+        // Both modes: RRF merge
+        const algoliaHits = algoliaResponse.results[0].hits;
+        const merged = rrfMerge(algoliaHits, semanticHits, query);
 
-      // Reset dedup set for new query, populate with page 0 IDs
-      seenObjectIDs.clear();
-      merged.forEach((h) => seenObjectIDs.add(h.objectID));
+        seenObjectIDs.clear();
+        merged.forEach((h) => seenObjectIDs.add(h.objectID));
 
-      // Replace hits in the Algolia response (keeps all metadata: nbHits, facets, etc.)
-      algoliaResponse.results[0].hits = merged.slice(0, mainReq.params?.hitsPerPage || 30);
+        algoliaResponse.results[0].hits = merged.slice(0, mainReq.params?.hitsPerPage || 30);
+      } else {
+        // Semantic only: replace hits entirely with semantic results, keep badge
+        seenObjectIDs.clear();
+        const tagged = semanticHits.map((h) => ({ ...h, _semantic: true }));
+        tagged.forEach((h) => seenObjectIDs.add(h.objectID));
+
+        algoliaResponse.results[0].hits = tagged.slice(0, mainReq.params?.hitsPerPage || 30);
+        // Tell InstantSearch there are no more pages
+        algoliaResponse.results[0].nbHits = tagged.length;
+        algoliaResponse.results[0].nbPages = 1;
+      }
       return algoliaResponse;
     }
 
@@ -199,6 +222,30 @@ function slowScrollToAnchor() {
   requestAnimationFrame(step);
 }
 
+/**
+ * Wrapper inside <InstantSearch> that listens for search-mode changes
+ * and bumps a Configure param to force a fresh search.
+ */
+function SearchContent() {
+  const [modeKey, setModeKey] = useState(0);
+
+  useEffect(() => {
+    const bump = () => setModeKey((k) => k + 1);
+    window.addEventListener(SEARCH_MODE_EVENT, bump);
+    return () => window.removeEventListener(SEARCH_MODE_EVENT, bump);
+  }, []);
+
+  return (
+    <>
+      <Configure hitsPerPage={30} analyticsTags={[`m${modeKey}`]} />
+      <CogitatorComponent />
+      <NoResultsBoundary>
+        <AutoInfiniteHits />
+      </NoResultsBoundary>
+    </>
+  );
+}
+
 const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -229,11 +276,7 @@ root.render(
             indexName="prod_QUOTES"
             searchClient={searchClient}
           >
-            <Configure hitsPerPage={30} />
-            <CogitatorComponent />
-            <NoResultsBoundary>
-              <AutoInfiniteHits />
-            </NoResultsBoundary>
+            <SearchContent />
           </InstantSearch>
         </article>
 

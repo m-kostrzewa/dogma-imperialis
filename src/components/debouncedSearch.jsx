@@ -1,6 +1,7 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import debounce from 'debounce';
 import { useSearchBox, useInstantSearch } from 'react-instantsearch';
+import { searchMode, notifyModeChanged } from '../searchMode';
 
 function smoothScrollTo(targetY, duration) {
   const startY = window.scrollY;
@@ -24,6 +25,8 @@ function smoothScrollTo(targetY, duration) {
 function DebouncedSearchBox() {
   const { refine } = useSearchBox();
   const { results } = useInstantSearch();
+  const [textEnabled, setTextEnabled] = useState(searchMode.text);
+  const [semanticEnabled, setSemanticEnabled] = useState(searchMode.semantic);
 
   const nbHits = results?.nbHits;
   const placeholder = nbHits != null
@@ -47,9 +50,37 @@ function DebouncedSearchBox() {
     }
   };
 
+  const handleTextChange = () => {
+    if (textEnabled && !semanticEnabled) return; // keep at least one
+    const next = !textEnabled;
+    setTextEnabled(next);
+    searchMode.text = next;
+    notifyModeChanged();
+  };
+
+  const handleSemanticChange = () => {
+    if (!textEnabled && semanticEnabled) return; // keep at least one
+    const next = !semanticEnabled;
+    setSemanticEnabled(next);
+    searchMode.semantic = next;
+    notifyModeChanged();
+  };
+
   return (
     <div className="main-search-div">
       <input id="mainSearch" placeholder={placeholder} type="search" onChange={onChange} onFocus={onFocus} />
+      <div className="search-mode-toggle">
+        <label className={`search-mode-label${textEnabled ? ' active' : ''}`}>
+          <input type="checkbox" checked={textEnabled} onChange={handleTextChange} />
+          <span className="search-mode-check" />
+          Text
+        </label>
+        <label className={`search-mode-label${semanticEnabled ? ' active' : ''}`}>
+          <input type="checkbox" checked={semanticEnabled} onChange={handleSemanticChange} />
+          <span className="search-mode-check" />
+          Meaning
+        </label>
+      </div>
     </div>
   );
 }

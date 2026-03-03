@@ -117,6 +117,74 @@ input[type=search]::-ms-clear {
     flex-grow: 1;
 }
 
+/* ─── Search mode toggle ─── */
+.search-mode-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: var(--font-xs);
+    letter-spacing: 0.5px;
+}
+
+.search-mode-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--text-faint);
+    transition: color var(--transition-fast);
+}
+
+.search-mode-label.active {
+    color: var(--gold);
+}
+
+.search-mode-label:hover {
+    color: var(--text-muted);
+}
+
+.search-mode-label.active:hover {
+    color: var(--gold-bright);
+}
+
+/* Hide native checkbox */
+.search-mode-label input[type="checkbox"] {
+    display: none;
+}
+
+/* Custom checkbox box */
+.search-mode-check {
+    width: 11px;
+    height: 11px;
+    border: 1px solid var(--border-medium);
+    border-radius: 1px;
+    display: inline-block;
+    position: relative;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.search-mode-label.active .search-mode-check {
+    border-color: var(--gold);
+    background: var(--gold-dim);
+}
+
+/* Checkmark */
+.search-mode-label.active .search-mode-check::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    width: 4px;
+    height: 7px;
+    border: solid var(--gold);
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+}
+
 .button-add-new {
     margin-left: 15px;
     background: linear-gradient(var(--crimson), rgb(100, 18, 18));

@@ -226,7 +226,7 @@ exports.semanticSearch = onRequest(
                     queryVector: vector,
                     limit: clampedLimit,
                     distanceMeasure: "COSINE",
-                    distanceThreshold: 0.35,
+                    distanceThreshold: 1.5,
                 })
                 .get();
 
