@@ -281,11 +281,12 @@ root.render(
         </article>
 
         <footer>
-          &copy; 2026 Michał Kostrzewa
+          <a href="https://ko-fi.com/michalkostrzewa" target="_blank" rel="noopener noreferrer">Donate</a>
           <span className="footer-sep"> · </span>
           <a href="https://github.com/m-kostrzewa/dogma-imperialis" target="_blank" rel="noopener noreferrer">GitHub</a>
           <span className="footer-sep"> · </span>
           <ModLogin />
+          <br/>&copy; 2026 Michał Kostrzewa
         </footer>
       </div>
     </FirebaseContext.Provider>

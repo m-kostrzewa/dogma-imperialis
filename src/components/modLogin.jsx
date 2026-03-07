@@ -48,9 +48,9 @@ class ModLogin extends React.Component {
   }
 
   render() {
-    return (<div>
-        {this.state.currentUser ? <a href="#" onClick={this.onSignOut}>{this.state.currentUser} - Log out</a> : <a href="#" onClick={this.onSignIn}>Moderator log in</a>}
-    </div>)
+    return (<span>
+        {this.state.currentUser ? <a href="#" onClick={this.onSignOut}>{this.state.currentUser} - Log out</a> : <a href="#" onClick={this.onSignIn}>Admin</a>}
+    </span>)
   }
 }
 

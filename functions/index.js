@@ -78,7 +78,7 @@ function getAlgoliaClient() {
 }
 
 exports.sendCollectionToAlgolia = onRequest(
-    { timeoutSeconds: 540 },
+    { timeoutSeconds: 540, memory: "512MiB" },
     async (req, res) => {
         const algoliaRecords = [];
         const querySnapshot = await db.collection("quotes").get();
@@ -94,6 +94,7 @@ exports.sendCollectionToAlgolia = onRequest(
                 tags: document.tags,
                 found_on: document.found_on,
                 on: document.on,
+                text_length: (document.text || "").length,
             };
 
             algoliaRecords.push(record);
@@ -109,6 +110,23 @@ exports.sendCollectionToAlgolia = onRequest(
             objects: algoliaRecords,
         });
         res.status(200).end();
+    }
+);
+
+/**
+ * One-shot endpoint to configure Algolia index settings.
+ * Sets customRanking so shorter quotes rank higher when relevance is tied.
+ */
+exports.configureAlgoliaIndex = onRequest(
+    { timeoutSeconds: 30 },
+    async (req, res) => {
+        await getAlgoliaClient().setSettings({
+            indexName: ALGOLIA_INDEX,
+            indexSettings: {
+                customRanking: ["asc(text_length)"],
+            },
+        });
+        res.status(200).json({ ok: true, message: "customRanking set to asc(text_length)" });
     }
 );
 
@@ -168,6 +186,7 @@ async function saveDocumentInAlgolia(snapshot) {
             tags: snapshot.data().tags,
             found_on: snapshot.data().found_on,
             on: snapshot.data().on,
+            text_length: (snapshot.data().text || "").length,
         };
         await getAlgoliaClient().saveObject({
             indexName: ALGOLIA_INDEX,
@@ -226,7 +245,7 @@ exports.semanticSearch = onRequest(
                     queryVector: vector,
                     limit: clampedLimit,
                     distanceMeasure: "COSINE",
-                    distanceThreshold: 1.5,
+                    distanceThreshold: 0.35,
                 })
                 .get();
 

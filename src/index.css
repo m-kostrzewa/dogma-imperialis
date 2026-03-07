@@ -104,9 +104,9 @@ body {
 /* ─── Footer ─── */
 footer {
     position: fixed;
-    left: 8px;
-    bottom: 30px;
-    writing-mode: vertical-rl;
+    right: 8px;
+    bottom: 3px;
+    /* writing-mode: vertical-rl; */
     text-orientation: mixed;
     font-size: var(--font-xs);
     color: var(--text-muted);
@@ -115,7 +115,7 @@ footer {
     opacity: 0.4;
     transition: opacity var(--transition-med);
     z-index: 10;
-    animation: fade-in-up 1s ease-out 2.4s backwards;
+    animation: footer-fade-in 1s ease-out 2.4s backwards;
 }
 footer:hover {
     opacity: 1;
@@ -226,4 +226,8 @@ footer a.active {
 @keyframes fade-in {
     0%   { opacity: 0; }
     100% { opacity: 1; }
+}
+@keyframes footer-fade-in {
+    0%   { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 0.4; transform: translateY(0); }
 }
