@@ -133,6 +133,28 @@ footer a.active {
     text-decoration: none;
 }
 
+/* Ko-fi button */
+.kofi-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--gold) !important;
+    transition: color var(--transition-fast);
+}
+.kofi-button:hover {
+    color: var(--gold-bright) !important;
+}
+.kofi-cup {
+    width: 14px;
+    height: 14px;
+    fill: #FF5E5B;
+    vertical-align: middle;
+    transition: transform var(--transition-fast);
+}
+.kofi-button:hover .kofi-cup {
+    transform: scale(1.15);
+}
+
 /* ─── Empty results ─── */
 .no-results {
     display: block;
